@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anshika's Special Birthday ✨</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body { margin: 0; background: #07060b; color: #fff; font-family: 'Poppins', sans-serif; overflow: hidden; }
+        .stars { position: fixed; inset: 0; z-index: -1; background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); }
+        .app-container { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .slide { position: absolute; width: 85%; max-width: 400px; opacity: 0; pointer-events: none; }
+        .slide.active { opacity: 1; pointer-events: auto; }
+        .card { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 25px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.1); text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 25px; margin-bottom: 15px; border: 2px solid #ffd700; }
+        .btn { background: linear-gradient(135deg, #ff0080, #7928ca); border: none; padding: 12px; width: 100%; color: white; border-radius: 15px; cursor: pointer; margin-top: 10px; font-weight: 600; transition: 0.3s; }
+        .btn:hover { transform: scale(1.05); }
+        #typewriter { font-size: 0.95rem; line-height: 1.6; text-align: left; min-height: 120px; }
+        #overlay { position: fixed; inset: 0; z-index: 100; background: #07060b; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+
+    <div class="stars"></div>
+    <audio id="bdayTune" src="birthday.mp3"></audio>
+    <audio id="romanticTune" src="romantic.mp3" loop></audio>
+
+    <div id="overlay">
+        <h2 style="color:#ffd700">Enter Key ✨</h2>
+        <input type="password" id="pass" style="padding:10px; border-radius:15px; border:1px solid #ff0080; background:transparent; color:white; text-align:center;">
+        <button class="btn" style="width:150px" onclick="unlock()">Unlock Magic</button>
+    </div>
+
+    <div class="app-container">
+        <!-- Slides -->
+        <div class="slide active"><div class="card"><img src="anshika1.jpg"><h1>Happy Birthday Anshika! 🎂</h1><button class="btn" onclick="change(1)">Start Journey</button></div></div>
+        <div class="slide"><div class="card"><img src="anshika2.jpg"><p>Kanpur ki shaan, meri ZHIYIN ❤️</p><button class="btn" onclick="change(1)">Next</button></div></div>
+        <div class="slide"><div class="card"><img src="anshika3.jpg"><p>Family, Fun, and You 🎈</p><button class="btn" onclick="change(1)">Next</button></div></div>
+        <div class="slide"><div class="card"><img src="anshika4.jpg"><p>Memories of us 🛤️</p><button class="btn" onclick="change(1)">Next</button></div></div>
+        <div class="slide"><div class="card"><img src="anshika5.jpg"><p>Always together 🤝</p><button class="btn" onclick="change(1)">Next</button></div></div>
+        <div class="slide"><div class="card"><img src="anshika6.jpg"><div id="typewriter"></div><button class="btn" id="next-btn" style="display:none;" onclick="change(1)">Next ✨</button></div></div>
+        <div class="slide"><div class="card"><img src="anshika7.jpg"><h2>Forever! ❤️</h2><p>Tumhara hona hi meri duniya ka sabse khoobsurat hissa hai.</p><button class="btn" onclick="confetti({particleCount: 500, spread: 360})">Celebrate! 🎉</button></div></div>
+    </div>
+
+    <script>
+        let cur = 0;
+        let musicSwitched = false;
+        const bdayTune = document.getElementById('bdayTune');
+        const romanticTune = document.getElementById('romanticTune');
+
+        function unlock() {
+            if(document.getElementById('pass').value === "KBBKB2") {
+                document.getElementById('overlay').style.display = 'none';
+                bdayTune.play();
+            } else { alert("Galat Key, Boss! 😉"); }
+        }
+
+        function change(n) {
+            const slides = document.querySelectorAll('.slide');
+            slides[cur].classList.remove('active');
+            cur = (cur + n + slides.length) % slides.length;
+            slides[cur].classList.add('active');
+            
+            // Music Transition Logic
+            if(cur >= 1 && !musicSwitched) {
+                musicSwitched = true;
+                bdayTune.pause();
+                romanticTune.volume = 1;
+                romanticTune.play();
+            }
+
+            anime({ targets: slides[cur], rotateX: [90, 0], opacity: [0, 1], duration: 1000, easing: 'easeOutElastic(1, .6)' });
+            
+            if(cur === 5) {
+                document.getElementById("typewriter").innerHTML = "";
+                startTyping("KBB aur KB2 ki dosti sirf lafzon ka khel nahi, ye wo sukoon hai jo bheed mein bhi tanhai ke waqt milta hai. Socho, kya ye mehaz ittefaq hai ki hamare raaste yahan tak aaye? Tumhari presence mere liye wo safe space hai. Isse pehle ki tum kuch kaho, bas itna sochna... kya ye bandhan sirf aaj ka hai, ya kisi purani kahani ka ek naya aur khoobsurat hissa? ✨");
+            }
+        }
+
+        function startTyping(text) {
+            let i = 0; const el = document.getElementById("typewriter");
+            function type() {
+                if (i < text.length) { el.innerHTML += text.charAt(i); i++; setTimeout(type, 40); }
+                else { document.getElementById("next-btn").style.display = "block"; }
+            }
+            type();
+        }
+    </script>
+</body>
+</html>
