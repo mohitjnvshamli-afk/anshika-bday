@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshika's Special Birthday ✨</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Base Styles */
+        body { margin: 0; background: #07060b; color: #fff; font-family: 'Poppins', sans-serif; overflow: hidden; height: 100vh; display: flex; align-items: center; justify-content: center; }
+        
+        /* Background Effects */
+        .stars { position: fixed; inset: 0; z-index: -2; background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); }
+        #rainCanvas { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+
+        /* App Layout */
+        .app-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
+        .slide { position: absolute; width: 90%; max-width: 420px; opacity: 0; pointer-events: none; }
+        .slide.active { opacity: 1; pointer-events: auto; }
+
+        /* Glassmorphism Card */
+        .card { 
+            background: rgba(255,255,255,0.04); 
+            backdrop-filter: blur(20px); 
+            padding: 30px 25px; 
+            border-radius: 35px; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            text-align: center; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6); 
+            z-index: 10;
+        }
+
+        /* Image Handling - No Cropping */
+        .img-box { 
+            width: 100%; 
+            height: 240px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+        }
+        .card img { 
+            max-width: 100%; 
+            max-height: 100%; 
+            object-fit: contain; 
+            border-radius: 20px; 
+            border: 2px solid rgba(255, 215, 0, 0.5); 
+        }
+
+        /* Typography & Buttons */
+        h1 { color: #ffd700; margin: 10px 0; font-size: 1.8rem; }
+        h2 { color: #ff0080; margin: 10px 0; }
+        p { font-size: 1rem; line-height: 1.6; color: #e0e0e0; }
+        
+        .btn { 
+            background: linear-gradient(135deg, #ff0080, #7928ca); 
+            border: none; padding: 14px; width: 100%; color: white; 
+            border-radius: 50px; cursor: pointer; margin-top: 15px; 
+            font-weight: 700; font-size: 1rem; transition: 0.3s; 
+            box-shadow: 0 5px 15px rgba(255,0,128,0.3);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,0,128,0.5); }
+
+        /* Balloons */
+        .balloon-container { position: relative; height: 200px; overflow: hidden; margin-bottom: 10px; }
+        .balloon { 
+            position: absolute; bottom: -100px; font-size: 40px; 
+            animation: floatUp 5s infinite ease-in; 
+        }
+        .b1 { left: 15%; animation-delay: 0s; }
+        .b2 { left: 38%; animation-delay: 1.2s; }
+        .b3 { left: 62%; animation-delay: 0.5s; }
+        .b4 { left: 85%; animation-delay: 1.8s; }
+        @keyframes floatUp { 0% { bottom: -100px; transform: translateX(0); } 100% { bottom: 110vh; transform: translateX(20px); } }
+
+        /* Interactive Boxes */
+        .interactive-box { 
+            background: rgba(255,0,128,0.15); border: 1px dashed #ff0080; 
+            padding: 20px; border-radius: 15px; margin: 15px 0; 
+            cursor: pointer; transition: 0.3s; min-height: 50px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .interactive-box:hover { background: rgba(255,0,128,0.25); }
+
+        /* Overlay */
+        #overlay { 
+            position: fixed; inset: 0; z-index: 100; background: #07060b; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+        }
+        #overlay input { 
+            padding: 12px; border-radius: 15px; border: 1px solid #ff0080; 
+            background: transparent; color: white; text-align: center; margin: 15px 0; width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars"></div>
+    <canvas id="rainCanvas"></canvas>
+    
+    <audio id="bdayTune" src="birthday.mp3"></audio>
+    <audio id="romanticTune" src="romantic.mp3" loop></audio>
+
+    <!-- Password Overlay -->
+    <div id="overlay">
+        <h2 style="color:#ffd700">Enter Secret Key ✨</h2>
+        <input type="password" id="pass" placeholder="Password">
+        <button class="btn" style="width:200px" onclick="unlock()">Unlock Magic</button>
+    </div>
+
+    <div class="app-container">
+        
+        <!-- Slide 1: Sweet Intro -->
+        <div class="slide active">
+            <div class="card">
+                <div class="img-box"><img src="anshika1.jpg" alt="Anshika"></div>
+                <h1>Happy Birthday Anshika! 🎂</h1>
+                <p>"Is duniya ki bheed mein, tumhara hona mere liye ek sukoon hai. Tumhari muskurahat se hi meri subah hoti hai. Aaj ka din sirf tumhare naam."</p>
+                <button class="btn" onclick="change(1)">Start Journey ✨</button>
+            </div>
+        </div>
+
+        <!-- Slide 2: 4 Balloons -->
+        <div class="slide">
+            <div class="card">
+                <div class="balloon-container">
+                    <div class="balloon b1">🎈</div><div class="balloon b2">🎈</div>
+                    <div class="balloon b3">🎈</div><div class="balloon b4">🎈</div>
+                </div>
+                <div class="img-box"><img src="anshika2.jpg"></div>
+                <p>Udaan bharte hain khushiyon ke sath! 🎈</p>
+                <button class="btn" onclick="change(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 3: Hidden Message -->
+        <div class="slide">
+            <div class="card">
+                <div class="img-box"><img src="anshika3.jpg"></div>
+                <h3>🔒 Hidden Message</h3>
+                <div class="interactive-box" onclick="this.innerHTML='<b>Tum meri zindagi ki sabse khoobsurat surprise ho! ❤️</b>'">Click to Reveal</div>
+                <button class="btn" onclick="change(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 4: Secret Message -->
+        <div class="slide">
+            <div class="card">
+                <div class="img-box"><img src="anshika4.jpg"></div>
+                <h3>🤫 Secret Message</h3>
+                <p style="font-size: 0.8rem; opacity: 0.6;">(Is box ko 2 second tak press karke rakhein)</p>
+                <div class="interactive-box" onmousedown="revealSecret(this)" onmouseup="hideSecret(this)" onmouseleave="hideSecret(this)" ontouchstart="revealSecret(this)" ontouchend="hideSecret(this)">Hold Me</div>
+                <button class="btn" onclick="change(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 5: Quiz -->
+        <div class="slide">
+            <div class="card">
+                <div class="img-box"><img src="anshika5.jpg"></div>
+                <h3>🧠 Quick Quiz!</h3>
+                <p>Hamein sabse zyada kis baat ka maza aata hai?</p>
+                <button class="btn" onclick="checkQuiz(true)">KBB & KB2 Talks</button>
+                <button class="btn" style="background: linear-gradient(135deg, #555, #333);" onclick="checkQuiz(false)">Eating Pizza</button>
+            </div>
+        </div>
+
+        <!-- Slide 6: Love You -->
+        <div class="slide">
+            <div class="card">
+                <div class="img-box"><img src="anshika6.jpg"></div>
+                <h1 style="color: #ff4d4d;">I Love You! ❤️</h1>
+                <p>Tumhara hona hi meri duniya ka sabse khoobsurat hissa hai. Hamesha aise hi muskurati raho.</p>
+                <button class="btn" onclick="change(1)">Next</button>
+            </div>
+        </div>
+
+        <!-- Slide 7: Final Celebration -->
+        <div class="slide">
+            <div class="card">
+                <div class="img-box"><img src="anshika7.jpg"></div>
+                <h2>Forever & Always ✨</h2>
+                <p>Janamdin mubarak ho meri ZHIYIN!</p>
+                <button class="btn" onclick="confetti({particleCount: 500, spread: 360, origin: {y: 0.6}})">Celebrate! 🎉</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // 1. Rain Effect Logic
+        const canvas = document.getElementById('rainCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        const drops = [];
+        for(let i=0; i<80; i++) drops.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, l: Math.random()*15+10, v: Math.random()*4+2});
+        
+        function drawRain() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(174, 194, 224, 0.2)'; ctx.lineWidth = 1;
+            drops.forEach(d => {
+                ctx.beginPath(); ctx.moveTo(d.x, d.y); ctx.lineTo(d.x, d.y + d.l); ctx.stroke();
+                d.y += d.v; if(d.y > canvas.height) { d.y = -20; d.x = Math.random()*canvas.width; }
+            });
+            requestAnimationFrame(drawRain);
+        }
+        drawRain();
+
+        // 2. App Logic
+        let cur = 0;
+        let musicSwitched = false;
+        const bdayTune = document.getElementById('bdayTune');
+        const romanticTune = document.getElementById('romanticTune');
+
+        function unlock() {
+            if(document.getElementById('pass').value === "KBBKB2") {
+                document.getElementById('overlay').style.display = 'none';
+                bdayTune.volume = 1;
+                bdayTune.play();
+            } else { alert("Galat Key, Boss! 😉"); }
+        }
+
+        function change(n) {
+            const slides = document.querySelectorAll('.slide');
+            slides[cur].classList.remove('active');
+            cur = (cur + n + slides.length) % slides.length;
+            slides[cur].classList.add('active');
+            
+            // Music Transition
+            if(cur >= 1 && !musicSwitched) {
+                musicSwitched = true;
+                fadeOut(bdayTune);
+                setTimeout(() => {
+                    romanticTune.volume = 0;
+                    romanticTune.play();
+                    fadeIn(romanticTune);
+                }, 1000);
+            }
+
+            // 3D Animation
+            anime({ targets: slides[cur], rotateX: [40, 0], opacity: [0, 1], duration: 1000, easing: 'easeOutElastic(1, .7)' });
+        }
+
+        // 3. Helper Functions
+        function fadeOut(audio) {
+            let vol = 1;
+            let timer = setInterval(() => {
+                if (vol > 0.1) { vol -= 0.1; audio.volume = vol; } 
+                else { clearInterval(timer); audio.pause(); }
+            }, 100);
+        }
+
+        function fadeIn(audio) {
+            let vol = 0;
+            let timer = setInterval(() => {
+                if (vol < 1) { vol += 0.1; audio.volume = vol; } 
+                else { clearInterval(timer); }
+            }, 100);
+        }
+
+        function checkQuiz(ans) {
+            if(ans) { alert("Bilkul sahi! KBB aur KB2 ki baatein hi toh jaan hain! 😄"); change(1); }
+            else { alert("Galat! Socho fir se 😉"); }
+        }
+
+        function revealSecret(el) {
+            el.innerHTML = '<b>Main hamesha tumhare sath hoon, chahe kuch bhi ho jaye. 🤝</b>';
+        }
+        function hideSecret(el) {
+            if(el.innerHTML.includes('Main hamesha')) {
+                // Keep it revealed for a moment or reset, let's keep it revealed for better UX
+            } else {
+                el.innerHTML = 'Hold Me';
+            }
+        }
+    </script>
+</body>
+</html>
