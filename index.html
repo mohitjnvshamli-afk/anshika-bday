@@ -1,120 +1,1069 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshika's 27th Nov Special ✨</title>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --accent: #ff0080; --bg: #050505; }
-        body { margin: 0; background: var(--bg); color: #fff; font-family: 'Poppins', sans-serif; overflow: hidden; height: 100vh; display: flex; justify-content: center; align-items: center; }
-        .app-shell { width: 100%; max-width: 400px; height: 100vh; position: relative; }
-        .slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px; }
-        .slide.active { opacity: 1; pointer-events: auto; }
-        .card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 40px; text-align: center; width: 85%; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
-        .photo-frame { width: 100%; height: 300px; border-radius: 30px; border: 3px solid var(--accent); object-fit: cover; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,0,128,0.3); }
-        .btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
-        .nav-btn { background: rgba(255,255,255,0.15); border: none; padding: 12px 25px; color: white; border-radius: 50px; cursor: pointer; }
-        .primary-btn { background: var(--accent); padding: 15px 30px; border-radius: 50px; border: none; color: white; font-weight: bold; width: 100%; margin-top: 15px; }
-        #lock-screen { position: fixed; inset: 0; z-index: 1000; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100812">
+
+<title>A Little World For Anshika ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+:root {
+    --bg: #100812;
+    --pink: #e9a9c8;
+    --rose: #d88eb4;
+    --cream: #f8e9ef;
+    --muted: #c8afc0;
+    --glass: rgba(255,255,255,.055);
+    --line: rgba(255,255,255,.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cream);
+    background:
+        radial-gradient(ellipse at 15% 20%, #3c1836 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 80%, #281427 0%, transparent 40%),
+        var(--bg);
+    overflow: hidden;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+    width: 100%;
+    max-width: 560px;
+    height: 100dvh;
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Atmosphere */
+
+.glow {
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: #a74e88;
+    filter: blur(120px);
+    opacity: .12;
+    pointer-events: none;
+}
+
+.glow.one {
+    top: -120px;
+    left: -120px;
+}
+
+.glow.two {
+    bottom: -150px;
+    right: -100px;
+    background: #d58baf;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    bottom: -40px;
+    color: #f1c1db;
+    opacity: 0;
+    animation: drift linear infinite;
+    text-shadow: 0 0 12px rgba(255,255,255,.2);
+}
+
+@keyframes drift {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .5;
+    }
+    85% {
+        opacity: .35;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(160deg);
+        opacity: 0;
+    }
+}
+
+/* Top UI */
+
+.topbar {
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+}
+
+.brand {
+    color: #e8bad3;
+    font-family: 'Dancing Script', cursive;
+    font-size: 23px;
+}
+
+.music-btn {
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.06);
+    color: var(--cream);
+    padding: 10px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.progress-wrap {
+    position: absolute;
+    top: 70px;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    background: rgba(255,255,255,.12);
+    z-index: 20;
+    border-radius: 20px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #d88eb4, #ffe2ee);
+    border-radius: 20px;
+    transition: width .5s ease;
+}
+
+/* Slides */
+
+.slide {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 24px 55px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(15px);
+    transition: opacity .8s ease, transform .8s ease, visibility .8s;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+.glass-card {
+    padding: 30px 25px;
+    background: var(--glass);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 20px 70px rgba(0,0,0,.25);
+}
+
+.kicker {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(46px, 12vw, 68px);
+    line-height: 1.12;
+    color: #f2c3da;
+    text-shadow: 0 0 30px rgba(230,157,196,.15);
+}
+
+h2 {
+    font-size: 40px;
+    color: #eebbd5;
+    margin-bottom: 15px;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.divider {
+    width: 45px;
+    height: 1px;
+    margin: 25px auto;
+    background: #dca3c1;
+    opacity: .7;
+}
+
+.soft-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: linear-gradient(135deg, #bd7099, #955c80);
+    color: white;
+    font-size: 14px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: transform .3s, filter .3s;
+    box-shadow: 0 8px 30px rgba(176,102,143,.2);
+}
+
+.soft-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.secondary-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    border-radius: 50px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.04);
+    color: var(--cream);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,.1);
+}
+
+.nav-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.nav-row button {
+    flex: 1;
+}
+
+/* Intro */
+
+.big-heart {
+    font-size: 45px;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: heartbeat 3s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.intro-note {
+    font-size: 14px;
+    max-width: 370px;
+    margin: 20px auto 0;
+}
+
+/* Photo slides */
+
+.memory-photo {
+    width: 100%;
+    height: min(42vh, 360px);
+    object-fit: cover;
+    border-radius: 23px;
+    border: 1px solid rgba(255,255,255,.18);
+    display: block;
+    box-shadow: 0 15px 45px rgba(0,0,0,.3);
+}
+
+.photo-missing {
+    width: 100%;
+    height: min(42vh, 360px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 23px;
+    border: 1px dashed rgba(232,169,200,.45);
+    background: rgba(255,255,255,.04);
+    color: var(--pink);
+    gap: 15px;
+}
+
+.photo-missing .symbol {
+    font-size: 50px;
+}
+
+.caption {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #f0d9e5;
+}
+
+.memory-number {
+    color: var(--pink);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* Envelope */
+
+.envelope {
+    font-size: 75px;
+    display: inline-block;
+    margin: 15px;
+    cursor: pointer;
+    filter: drop-shadow(0 10px 20px rgba(222,139,184,.2));
+    transition: transform .3s;
+}
+
+.envelope:hover {
+    transform: scale(1.07);
+}
+
+.letter {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 1s ease, opacity .8s ease;
+}
+
+.letter.open {
+    max-height: 700px;
+    opacity: 1;
+}
+
+.letter-text {
+    text-align: left;
+    margin-top: 20px;
+    white-space: pre-line;
+}
+
+/* Final */
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    color: #eab6d2;
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+/* Password */
+
+#lock {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background:
+        radial-gradient(ellipse at center, #40203d, transparent 75%),
+        #100812;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+.lock-card {
+    width: 100%;
+    max-width: 390px;
+    text-align: center;
+    padding: 35px 27px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    background: rgba(255,255,255,.045);
+    backdrop-filter: blur(25px);
+}
+
+.lock-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.lock-title {
+    font-size: 48px;
+}
+
+#password {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border: 1px solid rgba(232,169,200,.4);
+    border-radius: 50px;
+    background: rgba(0,0,0,.2);
+    color: white;
+    text-align: center;
+    outline: none;
+    letter-spacing: 2px;
+}
+
+#password::placeholder {
+    color: #b99bb1;
+    letter-spacing: 0;
+}
+
+.error {
+    color: #f2b6ce;
+    min-height: 22px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.tiny {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #ae91a6;
+}
+
+/* Mobile adjustments */
+
+@media(max-height: 700px) {
+    .slide {
+        padding-top: 90px;
+        padding-bottom: 35px;
+    }
+
+    .glass-card {
+        padding: 23px 20px;
+    }
+
+    .memory-photo, .photo-missing {
+        height: 34vh;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 380px) {
+    .slide {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .glass-card {
+        padding: 22px 18px;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-<audio id="bdayTune" src="birthday.mp3"></audio>
-<audio id="romanticTune" src="romantic.mp3" loop></audio>
+<div class="glow one"></div>
+<div class="glow two"></div>
+<div id="particles"></div>
 
-<!-- Lock Screen -->
-<div id="lock-screen">
-    <h2 style="color:var(--accent)">Anshika's Special 27 Nov ✨</h2>
-    <input type="password" id="pass" placeholder="Enter Secret Key" style="padding:15px; border-radius:20px; border:1px solid var(--accent); background:transparent; color:white; text-align:center; margin-bottom:15px; width:200px;">
-    <button class="primary-btn" style="width:200px" onclick="unlock()">Unlock Magic</button>
+<!-- Music -->
+<audio id="birthdayMusic" src="birthday.mp3" preload="auto"></audio>
+<audio id="loveMusic" src="romantic.mp3" preload="auto" loop></audio>
+
+<!-- Lock screen -->
+<div id="lock">
+    <div class="lock-card">
+
+        <div class="lock-icon">✧</div>
+
+        <p class="kicker">A little surprise awaits</p>
+
+        <h1 class="lock-title">For Anshika</h1>
+
+        <p style="margin-top:15px">
+            Somewhere in this little world,<br>
+            there's something made just for you.
+        </p>
+
+        <form id="unlockForm">
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your secret key"
+                autocomplete="off"
+                required
+            >
+
+            <div class="error" id="error"></div>
+
+            <button type="submit" class="soft-btn">
+                Open your little world ♡
+            </button>
+
+        </form>
+
+        <p class="tiny">27 November · A day to celebrate you</p>
+
+    </div>
 </div>
 
-<div class="app-shell">
-    <!-- Slide 1: Welcome -->
-    <div class="slide active">
-        <div class="card">
-            <h1>Happy Birthday, Anshika! 🎂</h1>
-            <p>27th November is special, just like you.</p>
-            <button class="primary-btn" onclick="next()">Start Journey</button>
-        </div>
+<div class="app">
+
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="brand">a little world ♡</div>
+
+        <button class="music-btn" id="musicToggle">
+            ♫ Music off
+        </button>
     </div>
 
-    <!-- Slides 2-8: Photo Gallery + Quiz -->
-    <script>
-        const gallery = ["", "Hamesha khilkhilati raho 😊", "Humari dosti ki yaadein 🤝", "Tumhara muskurana life hai ❤️", "Best partner ever! 🌟", "Family goals! 🏡", "My heart beats for you! ✨", "Sari khushiyan tumhare naam"];
-        for(let i=1; i<=7; i++) {
-            document.write(`
-                <div class="slide">
-                    <img src="anshika${i}.jpg" class="photo-frame">
-                    <div class="card">
-                        <p>${gallery[i]}</p>
-                        <div class="btn-group">
-                            <button class="nav-btn" onclick="prev()">Back</button>
-                            <button class="nav-btn" onclick="next()">Next</button>
-                        </div>
-                    </div>
+    <div class="progress-wrap">
+        <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <!-- Intro slide -->
+    <section class="slide active">
+        <div class="content glass-card">
+
+            <div class="big-heart">♡</div>
+
+            <p class="kicker">27 · November</p>
+
+            <h1>Happy Birthday,<br>Anshika</h1>
+
+            <div class="divider"></div>
+
+            <p class="intro-note">
+                I wanted to make something a little different
+                for you today. Something small, but filled
+                with memories, warmth and a few words
+                that I hope make you smile.
+            </p>
+
+            <button class="soft-btn" onclick="next()">
+                Let's begin gently ✨
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Photo gallery generated -->
+    <div id="gallery"></div>
+
+    <!-- Letter slide -->
+    <section class="slide">
+        <div class="content glass-card">
+
+            <p class="kicker">Something from my heart</p>
+
+            <h2>A letter for you</h2>
+
+            <p>
+                I couldn't fit everything into pictures.
+                So here's a little letter.
+            </p>
+
+            <div class="envelope" id="envelope" onclick="openLetter()">
+                💌
+            </div>
+
+            <p style="font-size:12px">
+                Tap the letter to open
+            </p>
+
+            <div class="letter" id="letter">
+
+                <div class="divider"></div>
+
+                <p class="letter-text" id="letterContent">
+                    Dear Anshika,
+
+                    On your birthday, I just want you to know
+                    how much your presence means.
+
+                    Some people make ordinary moments
+                    feel a little more beautiful.
+                    Your laughter, your little habits,
+                    your way of being yourself —
+                    they all have a place in my memories
+                    that I truly cherish.
+
+                    I hope this new year of your life
+                    brings you peaceful mornings,
+                    genuine smiles, dreams that come true
+                    and a thousand reasons to feel happy.
+
+                    And whenever life feels a little heavy,
+                    I hope you remember that you deserve
+                    the same kindness that you give to others.
+
+                    Happy Birthday, Anshika. ♡
+
+                    With lots of warmth,
+                </p>
+
+                <div class="signature">
+                    Someone who cares about you ♡
                 </div>
-            `);
-        }
-    </script>
 
-    <!-- Slide 9: Promise -->
-    <div class="slide">
-        <div class="card">
-            <h3>Future & Promise 💫</h3>
-            <p>Zindagi ki har mushkil mein main tumhara humsafar banke khada rahunga.</p>
-            <button class="primary-btn" onclick="next()">Confirm Promise</button>
-        </div>
-    </div>
+            </div>
 
-    <!-- Final Slide -->
-    <div class="slide">
-        <div class="card">
-            <h1>Stay Mine Forever ❤️</h1>
-            <p>Dosti se shuru hua ye rishta, kya tum isse life-partner tak le jana chahogi?</p>
-            <button class="primary-btn" onclick="finalCeleb()">YES, FOREVER! 🎉</button>
+            <button class="soft-btn" onclick="next()">
+                A little more... ♡
+            </button>
+
         </div>
-    </div>
+    </section>
+
+    <!-- Final question -->
+    <section class="slide">
+        <div class="content glass-card">
+
+            <div class="big-heart">♡</div>
+
+            <p class="kicker">One last little thought</p>
+
+            <h1>Here's to us</h1>
+
+            <div class="divider"></div>
+
+            <p>
+                Dosti se shuru hua ye khoobsurat rishta,
+                aur dheere-dheere mere dil mein
+                ek bahut special jagah bana gaya.
+
+                <br><br>
+
+                I don't know what every tomorrow holds,
+                but I'd love to keep making memories with you.
+
+                <br><br>
+
+                Would you like to see where
+                this beautiful journey takes us?
+            </p>
+
+            <button class="soft-btn" onclick="celebrate()">
+                I'd love that ♡
+            </button>
+
+            <button class="secondary-btn" onclick="restart()">
+                Relive this little journey ↺
+            </button>
+
+        </div>
+    </section>
+
 </div>
 
 <script>
-    let current = 0;
-    const slides = document.querySelectorAll('.slide');
-    const bday = document.getElementById('bdayTune');
-    const rom = document.getElementById('romanticTune');
 
-    function unlock() {
-        if(document.getElementById('pass').value === "KBBKB2") {
-            document.getElementById('lock-screen').style.display = 'none';
-            bday.play();
-        } else { alert("Galat Key! 😉"); }
+/* ==============================
+   CONFIGURATION
+============================== */
+
+const SECRET = "KBBKB2";
+
+const memories = [
+    {
+        file: "anshika1.jpg",
+        text: "Hamesha khilkhilati raho... your smile makes things brighter. ♡"
+    },
+    {
+        file: "anshika2.jpg",
+        text: "Some memories don't need perfect words. They just need to be remembered. ✨"
+    },
+    {
+        file: "anshika3.jpg",
+        text: "Humari dosti ki yaadein... a little collection of moments I'll always cherish. 🤍"
+    },
+    {
+        file: "anshika4.jpg",
+        text: "You have a way of making the simplest moments feel special. 🌷"
+    },
+    {
+        file: "anshika5.jpg",
+        text: "Here's to the little dreams, the big plans and all the happiness ahead. 🏡"
+    },
+    {
+        file: "anshika6.jpg",
+        text: "Some people are simply a beautiful part of our story. You are one of them. ♡"
+    },
+    {
+        file: "anshika7.jpg",
+        text: "Sari khushiyan tumhare naam... today, tomorrow and always. 🌙"
     }
+];
 
-    function next() {
-        if(current < slides.length - 1) {
-            slides[current].classList.remove('active');
-            current++;
-            slides[current].classList.add('active');
-            if(current === 8) { bday.pause(); rom.play(); }
-            confetti({ particleCount: 50, spread: 30 });
+/* ==============================
+   CREATE SLIDES
+============================== */
+
+const gallery = document.getElementById("gallery");
+
+memories.forEach((memory, i) => {
+
+    const slide = document.createElement("section");
+
+    slide.className = "slide";
+
+    slide.innerHTML = `
+        <div class="content glass-card">
+
+            <p class="memory-number">
+                MEMORY ${String(i + 1).padStart(2, "0")}
+            </p>
+
+            <img
+                class="memory-photo"
+                src="${memory.file}"
+                alt="Birthday memory ${i + 1}"
+            >
+
+            <div class="photo-missing" style="display:none">
+                <div class="symbol">♡</div>
+                <p>Place ${memory.file} in your website folder</p>
+            </div>
+
+            <p class="caption">${memory.text}</p>
+
+            <div class="nav-row">
+
+                <button class="secondary-btn" onclick="prev()">
+                    ← Back
+                </button>
+
+                <button class="soft-btn" onclick="next()">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    const img = slide.querySelector(".memory-photo");
+    const missing = slide.querySelector(".photo-missing");
+
+    img.addEventListener("error", () => {
+        img.style.display = "none";
+        missing.style.display = "flex";
+    });
+
+    gallery.appendChild(slide);
+});
+
+/* ==============================
+   SLIDE SYSTEM
+============================== */
+
+let current = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+const total = slides.length;
+
+const progress = document.getElementById("progress");
+
+function updateProgress() {
+    progress.style.width =
+        ((current + 1) / total * 100) + "%";
+}
+
+function showSlide(index) {
+
+    slides[current].classList.remove("active");
+
+    current = index;
+
+    slides[current].classList.add("active");
+
+    updateProgress();
+
+    // Letter slide is index 8
+    // Final slide is index 9
+    if (current >= 8) {
+        birthdayMusic.pause();
+        if (musicEnabled) {
+            loveMusic.play().catch(() => {});
+        }
+    } else {
+        loveMusic.pause();
+
+        if (musicEnabled && birthdayMusic.paused) {
+            birthdayMusic.play().catch(() => {});
         }
     }
 
-    function prev() {
-        if(current > 0) {
-            slides[current].classList.remove('active');
-            current--;
-            slides[current].classList.add('active');
+    window.scrollTo(0, 0);
+}
+
+function next() {
+    if (current < total - 1) {
+        showSlide(current + 1);
+    }
+}
+
+function prev() {
+    if (current > 0) {
+        showSlide(current - 1);
+    }
+}
+
+/* ==============================
+   PASSWORD
+============================== */
+
+document.getElementById("unlockForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const entered =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("error");
+
+    if (entered === SECRET) {
+
+        document.getElementById("lock").style.display = "none";
+
+        updateProgress();
+
+        if (musicEnabled) {
+            birthdayMusic.play().catch(() => {});
         }
+
+        burst(100);
+
+    } else {
+
+        error.textContent =
+            "That doesn't seem right... try again ♡";
+
+        document.getElementById("password").value = "";
+
     }
 
-    function finalCeleb() {
-        confetti({ particleCount: 1000, spread: 360, origin: { y: 0.5 } });
-        alert("Happy Birthday Anshika! Love you to the moon and back.");
+});
+
+/* ==============================
+   MUSIC
+============================== */
+
+let musicEnabled = false;
+
+const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click", () => {
+
+    musicEnabled = !musicEnabled;
+
+    musicToggle.textContent =
+        musicEnabled ? "♫ Music on" : "♫ Music off";
+
+    if (musicEnabled) {
+
+        if (current >= 8) {
+            loveMusic.play().catch(() => {});
+        } else {
+            birthdayMusic.play().catch(() => {});
+        }
+
+    } else {
+
+        birthdayMusic.pause();
+        loveMusic.pause();
+
     }
+
+});
+
+/* ==============================
+   LETTER
+============================== */
+
+function openLetter() {
+
+    const letter = document.getElementById("letter");
+
+    letter.classList.toggle("open");
+
+    document.getElementById("envelope").textContent =
+        letter.classList.contains("open") ? "💗" : "💌";
+
+}
+
+/* ==============================
+   CELEBRATION
+============================== */
+
+function burst(amount = 100) {
+
+    if (typeof confetti !== "function") return;
+
+    confetti({
+        particleCount: amount,
+        spread: 70,
+        startVelocity: 30,
+        origin: { y: .65 },
+        colors: ["#e9a9c8", "#f8e9ef", "#d88eb4", "#ffffff"]
+    });
+}
+
+function celebrate() {
+
+    if (typeof confetti === "function") {
+
+        const end = Date.now() + 4500;
+
+        (function frame() {
+
+            confetti({
+                particleCount: 4,
+                angle: 60,
+                spread: 50,
+                origin: { x: 0 },
+                colors: ["#e9a9c8", "#ffffff", "#d88eb4"]
+            });
+
+            confetti({
+                particleCount: 4,
+                angle: 120,
+                spread: 50,
+                origin: { x: 1 },
+                colors: ["#e9a9c8", "#ffffff", "#d88eb4"]
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+
+        })();
+
+    }
+
+    alert(
+        "Happy Birthday, Anshika ♡\n\n" +
+        "May your life always have little moments " +
+        "that feel like magic. You deserve so much happiness."
+    );
+
+}
+
+/* ==============================
+   REPLAY
+============================== */
+
+function restart() {
+
+    birthdayMusic.pause();
+    loveMusic.pause();
+
+    birthdayMusic.currentTime = 0;
+    loveMusic.currentTime = 0;
+
+    showSlide(0);
+
+    if (musicEnabled) {
+        birthdayMusic.play().catch(() => {});
+    }
+
+}
+
+/* ==============================
+   PARTICLES
+============================== */
+
+const particleBox = document.getElementById("particles");
+
+const symbols = ["♡", "✧", "·", "✦"];
+
+function createParticle() {
+
+    const particle = document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.fontSize =
+        (10 + Math.random() * 18) + "px";
+
+    particle.style.animationDuration =
+        (8 + Math.random() * 10) + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    particleBox.appendChild(particle);
+
+    setTimeout(() => particle.remove(), 20000);
+
+}
+
+setInterval(createParticle, 800);
+
+updateProgress();
+
 </script>
+
 </body>
 </html>
