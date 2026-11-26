@@ -4,26 +4,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#26000f">
+<meta name="theme-color" content="#21000e">
 
-<title>Anshika | A Birthday Made With Love ♡</title>
+<title>Happy Birthday Anshika | From KBB ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
 :root {
-    --bg: #18000b;
-    --wine: #650b32;
-    --red: #a31350;
-    --pink: #ff70a8;
-    --rose: #f4b3ce;
-    --gold: #f5d18c;
-    --white: #fff2f6;
-    --muted: #e4b9ca;
-    --glass: rgba(255,255,255,.075);
-    --border: rgba(255,210,230,.2);
+    --bg: #19000c;
+    --wine: #56001f;
+    --red: #a90048;
+    --pink: #ff397f;
+    --rose: #ff9dbf;
+    --gold: #f6ce79;
+    --cream: #fff0f5;
+    --muted: #f0c8d8;
+    --glass: rgba(255,255,255,.085);
+    --border: rgba(255,220,235,.23);
 }
 
 * {
@@ -33,14 +33,14 @@
 }
 
 body {
-    background:
-        radial-gradient(ellipse at 15% 15%, #64132e 0%, transparent 45%),
-        radial-gradient(ellipse at 90% 85%, #47102b 0%, transparent 45%),
-        linear-gradient(145deg, #18000b, #290014, #100008);
-    color: var(--white);
-    font-family: Poppins, sans-serif;
-    height: 100dvh;
+    min-height: 100dvh;
     overflow: hidden;
+    color: var(--cream);
+    font-family: Poppins, "Noto Sans Devanagari", sans-serif;
+    background:
+        radial-gradient(ellipse at 10% 10%, #84113e 0%, transparent 42%),
+        radial-gradient(ellipse at 90% 90%, #62112f 0%, transparent 45%),
+        linear-gradient(145deg,#160009,#310017,#100008);
 }
 
 button, input {
@@ -50,37 +50,6 @@ button, input {
 button {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-}
-
-.app {
-    width: 100%;
-    max-width: 560px;
-    height: 100dvh;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-}
-
-.glow {
-    position: fixed;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: .2;
-    pointer-events: none;
-}
-
-.glow.one {
-    background: #ff287d;
-    top: -120px;
-    left: -100px;
-}
-
-.glow.two {
-    background: #d9a34b;
-    bottom: -120px;
-    right: -100px;
 }
 
 #particles {
@@ -93,39 +62,71 @@ button {
 
 .particle {
     position: absolute;
-    bottom: -40px;
-    color: #ffb5d1;
+    bottom: -35px;
+    color: #ffb3ce;
     animation: floatUp linear forwards;
     opacity: 0;
 }
 
 @keyframes floatUp {
     0% { transform: translateY(0) rotate(0); opacity: 0; }
-    15% { opacity: .6; }
+    15% { opacity: .7; }
     100% { transform: translateY(-110vh) rotate(180deg); opacity: 0; }
 }
 
-/* Header */
+.glow {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .23;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow.one {
+    background: #ff176f;
+    top: -130px;
+    left: -100px;
+}
+
+.glow.two {
+    background: #d99b42;
+    bottom: -130px;
+    right: -100px;
+}
+
+.app {
+    width: 100%;
+    max-width: 560px;
+    height: 100dvh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
 
 .topbar {
     position: absolute;
-    top: 18px;
-    left: 22px;
-    right: 22px;
-    z-index: 30;
+    z-index: 50;
+    top: 15px;
+    left: 20px;
+    right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .brand {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script", cursive;
     color: var(--gold);
-    font-size: 24px;
+    font-size: 25px;
+    text-shadow: 0 0 15px #e76b9b;
 }
 
 .music-btn {
-    background: rgba(255,255,255,.09);
+    background: rgba(255,255,255,.1);
     border: 1px solid var(--border);
     color: white;
     border-radius: 30px;
@@ -135,46 +136,44 @@ button {
 
 .progress-wrap {
     position: absolute;
-    z-index: 30;
-    top: 60px;
-    left: 22px;
-    right: 22px;
-    height: 3px;
+    z-index: 50;
+    top: 58px;
+    left: 20px;
+    right: 20px;
+    height: 4px;
     border-radius: 20px;
-    background: rgba(255,255,255,.14);
+    background: rgba(255,255,255,.15);
 }
 
 .progress {
     height: 100%;
     width: 0;
-    background: linear-gradient(90deg, #ff5c9b, #f8d18b);
-    transition: width .5s;
+    background: linear-gradient(90deg,#ff397f,#f6ce79);
     border-radius: 20px;
+    transition: width .4s;
 }
-
-/* Slides */
 
 .slide {
     position: absolute;
     inset: 0;
-    padding: 90px 22px 30px;
+    padding: 88px 22px 25px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     overflow-y: auto;
+    overscroll-behavior: contain;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(20px);
-    transition: .7s ease;
-    z-index: 1;
+    transform: translateY(18px) scale(.99);
+    transition: opacity .55s ease, transform .55s ease, visibility .55s;
 }
 
 .slide.active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .content {
@@ -189,52 +188,61 @@ button {
     background: var(--glass);
     border: 1px solid var(--border);
     backdrop-filter: blur(22px);
-    box-shadow: 0 20px 70px rgba(0,0,0,.3);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 20px 65px rgba(0,0,0,.35);
 }
 
 .kicker {
     color: var(--gold);
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     font-size: 10px;
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 500;
 }
 
 h1 {
-    font-size: clamp(37px, 10vw, 57px);
-    color: #ffd1e2;
-    line-height: 1.2;
+    font-size: clamp(38px,10vw,57px);
+    line-height: 1.15;
+    color: #ffd2e3;
 }
 
 h2 {
-    color: #ffc1d9;
-    font-size: 31px;
+    font-size: 30px;
+    color: #ffc0d8;
+    line-height: 1.3;
     margin-bottom: 14px;
 }
 
 p {
     color: var(--muted);
-    font-size: 14px;
-    line-height: 1.95;
+    font-size: 13px;
     font-weight: 300;
+    line-height: 1.95;
+    white-space: pre-line;
+}
+
+.hindi {
+    font-family: "Noto Sans Devanagari", Poppins, sans-serif;
+    line-height: 2.05;
 }
 
 .divider {
-    width: 55px;
-    height: 1px;
-    background: var(--gold);
-    margin: 22px auto;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg,var(--pink),var(--gold));
+    margin: 20px auto;
 }
 
 .heart {
     font-size: 48px;
     display: inline-block;
-    animation: beat 2s infinite;
+    animation: beat 1.8s infinite;
+    filter: drop-shadow(0 0 15px #ff4c91);
 }
 
 @keyframes beat {
@@ -244,14 +252,15 @@ p {
 .main-btn {
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(255,220,235,.3);
+    margin-top: 20px;
+    border: 1px solid rgba(255,220,235,.35);
     border-radius: 50px;
     color: white;
-    background: linear-gradient(120deg, #b51a58, #e74c88);
-    margin-top: 22px;
+    background: linear-gradient(115deg,#9f003f,#ed286f,#bd1559);
     font-size: 13px;
-    box-shadow: 0 8px 28px rgba(231,76,136,.22);
-    transition: .3s;
+    font-weight: 600;
+    box-shadow: 0 8px 30px rgba(237,40,111,.25);
+    transition: .25s;
 }
 
 .main-btn:hover {
@@ -261,11 +270,12 @@ p {
 
 .back-btn {
     flex: 1;
-    padding: 12px;
+    padding: 13px;
     border-radius: 50px;
     border: 1px solid var(--border);
+    background: rgba(255,255,255,.07);
     color: white;
-    background: rgba(255,255,255,.06);
+    font-size: 12px;
 }
 
 .button-row {
@@ -274,29 +284,68 @@ p {
     margin-top: 18px;
 }
 
-/* Photo gallery */
+.signature {
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    color: var(--gold);
+    margin-top: 15px;
+}
+
+/* Slide colour variations */
+
+.welcome .card {
+    background: linear-gradient(145deg,rgba(139,0,58,.65),rgba(70,0,35,.72));
+    border-color: #d34b83;
+}
+
+.friend .card {
+    background: linear-gradient(145deg,rgba(85,0,65,.8),rgba(42,0,36,.85));
+    border-color: #bd68a5;
+}
+
+.wish-slide .card {
+    background: linear-gradient(145deg,rgba(124,0,48,.8),rgba(69,0,30,.85));
+    border-color: #f1a1bf;
+}
+
+.family-slide .card {
+    background: linear-gradient(145deg,rgba(93,38,0,.65),rgba(63,10,27,.85));
+    border-color: #d6a85c;
+}
+
+.quiz-slide .card {
+    background: linear-gradient(145deg,rgba(85,0,49,.8),rgba(40,0,35,.9));
+    border-color: #d65b9c;
+}
+
+.final-slide .card {
+    background: linear-gradient(145deg,rgba(128,0,50,.78),rgba(55,0,26,.92));
+    border-color: var(--gold);
+}
+
+/* Photos */
 
 .photo-frame {
     width: 100%;
-    height: min(48vh, 390px);
+    height: min(48vh,390px);
+    display: block;
     object-fit: contain;
     object-position: center;
-    background: rgba(0,0,0,.32);
-    border: 1px solid rgba(255,215,230,.3);
+    background: rgba(0,0,0,.38);
+    border: 2px solid rgba(255,210,230,.35);
     border-radius: 22px;
-    display: block;
-    box-shadow: 0 12px 40px rgba(0,0,0,.3);
+    box-shadow: 0 12px 35px rgba(0,0,0,.3);
 }
 
 .photo-placeholder {
     width: 100%;
     height: 300px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     border: 1px dashed var(--pink);
     border-radius: 22px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     background: rgba(255,255,255,.04);
 }
 
@@ -306,35 +355,59 @@ p {
 }
 
 .memory-caption {
-    color: #ffd3e3;
-    margin-top: 20px;
-    font-size: 14px;
+    color: #ffdfeb;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+/* Friendship */
+
+.story-line {
+    text-align: left;
+    padding: 14px;
+    margin-top: 12px;
+    border-left: 3px solid var(--pink);
+    background: rgba(255,255,255,.05);
+    border-radius: 0 14px 14px 0;
+}
+
+.story-line strong {
+    color: #ffd2e3;
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
 }
 
 /* Quiz */
+
+.quiz-count {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
 
 .quiz-option {
     display: block;
     width: 100%;
     padding: 13px;
-    margin-top: 11px;
-    border-radius: 15px;
-    background: rgba(255,255,255,.055);
-    border: 1px solid var(--border);
-    color: #ffe8f0;
-    font-size: 13px;
+    margin-top: 10px;
     text-align: left;
-    transition: .25s;
+    border-radius: 14px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid var(--border);
+    color: #ffe9f1;
+    font-size: 12px;
+    transition: .2s;
 }
 
-.quiz-option:hover:not(:disabled) {
-    background: rgba(231,76,136,.2);
-    border-color: var(--pink);
+.quiz-option:disabled {
+    cursor: default;
 }
 
 .quiz-option.correct {
-    background: rgba(45,150,100,.25);
-    border-color: #80d9a7;
+    background: rgba(30,160,95,.24);
+    border-color: #83dfac;
 }
 
 .quiz-option.wrong {
@@ -342,57 +415,47 @@ p {
     border-color: #ff9ab2;
 }
 
-.quiz-option:disabled {
-    cursor: default;
-}
-
 .quiz-feedback {
-    min-height: 48px;
+    min-height: 52px;
+    color: var(--gold);
     font-size: 12px;
-    color: var(--gold);
     margin-top: 15px;
-}
-
-.quiz-count {
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 2px;
+    line-height: 1.8;
 }
 
 /* Balloons */
 
 .balloon-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 9px;
-    margin: 30px 0 20px;
+    grid-template-columns: repeat(5,1fr);
+    gap: 8px;
+    margin: 25px 0;
 }
 
 .balloon-item {
+    background: none;
     border: none;
-    background: transparent;
     color: white;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    min-width: 0;
+    flex-direction: column;
+    gap: 9px;
 }
 
 .balloon {
     width: 100%;
-    aspect-ratio: .72;
-    max-width: 65px;
+    max-width: 62px;
+    aspect-ratio: .75;
     border-radius: 50% 50% 45% 45%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 25px;
+    align-items: center;
     position: relative;
-    box-shadow: inset -7px -8px 15px rgba(0,0,0,.18),
+    font-size: 23px;
+    box-shadow: inset -7px -8px 15px rgba(0,0,0,.2),
                 inset 5px 5px 12px rgba(255,255,255,.3),
-                0 8px 18px rgba(0,0,0,.2);
-    transition: transform .3s;
+                0 8px 20px rgba(0,0,0,.25);
+    transition: .3s;
 }
 
 .balloon::after {
@@ -403,16 +466,16 @@ p {
     transform: translateX(-50%);
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 10px solid currentColor;
+    border-top: 10px solid var(--balloon-color);
 }
 
 .balloon-item:hover .balloon {
-    transform: translateY(-9px) rotate(5deg);
+    transform: translateY(-8px) rotate(5deg);
 }
 
 .balloon-item.opened .balloon {
     opacity: .55;
-    transform: scale(.88);
+    transform: scale(.86);
 }
 
 .balloon-item small {
@@ -421,56 +484,21 @@ p {
 }
 
 .wish-box {
-    padding: 18px;
+    min-height: 100px;
+    padding: 17px;
     border: 1px solid var(--border);
-    border-radius: 18px;
-    background: rgba(255,255,255,.06);
-    min-height: 85px;
+    border-radius: 17px;
+    background: rgba(255,255,255,.07);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .wish-box p {
-    color: #ffdfeb;
-}
-
-/* Friendship */
-
-.friendship-symbol {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.story-line {
-    text-align: left;
-    padding: 15px;
-    margin-top: 12px;
-    border-left: 2px solid var(--pink);
-    background: rgba(255,255,255,.035);
-    border-radius: 0 15px 15px 0;
-}
-
-.story-line strong {
-    color: #ffd1e2;
-    font-size: 13px;
-    display: block;
-    margin-bottom: 5px;
+    color: #ffe2ed;
 }
 
 /* Letter */
-
-.letter {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 1s ease, opacity .8s;
-}
-
-.letter.open {
-    max-height: 650px;
-    opacity: 1;
-}
 
 .envelope {
     font-size: 70px;
@@ -480,22 +508,26 @@ p {
 }
 
 .envelope:hover {
-    transform: scale(1.12) rotate(-5deg);
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.letter {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1s ease,opacity .8s;
+}
+
+.letter.open {
+    max-height: 850px;
+    opacity: 1;
 }
 
 .letter-content {
-    white-space: pre-line;
     text-align: left;
     color: #ffe3ed;
     line-height: 2;
     font-size: 13px;
-}
-
-.signature {
-    font-family: 'Dancing Script', cursive;
-    font-size: 29px;
-    color: var(--gold);
-    margin-top: 15px;
 }
 
 /* Lock */
@@ -509,7 +541,7 @@ p {
     align-items: center;
     padding: 22px;
     background:
-        radial-gradient(ellipse at center, #77133c, transparent 70%),
+        radial-gradient(ellipse at center,#77133c,transparent 72%),
         #18000b;
 }
 
@@ -517,24 +549,24 @@ p {
     width: 100%;
     max-width: 390px;
     padding: 32px 25px;
+    text-align: center;
     border: 1px solid var(--border);
     border-radius: 30px;
-    background: rgba(255,255,255,.07);
-    backdrop-filter: blur(20px);
-    text-align: center;
+    background: rgba(255,255,255,.09);
+    backdrop-filter: blur(22px);
 }
 
 #password {
     width: 100%;
     padding: 15px;
-    margin-top: 25px;
-    border-radius: 50px;
+    margin-top: 24px;
     border: 1px solid var(--pink);
-    background: rgba(0,0,0,.25);
+    border-radius: 50px;
+    background: rgba(0,0,0,.3);
     color: white;
     text-align: center;
-    outline: none;
     letter-spacing: 3px;
+    outline: none;
 }
 
 #error {
@@ -544,23 +576,26 @@ p {
     margin-top: 10px;
 }
 
-/* Mobile */
-
-@media(max-height: 740px) {
-    .slide { padding-top: 82px; padding-bottom: 20px; }
+@media(max-height:740px) {
+    .slide { padding-top: 80px; padding-bottom: 15px; }
     .card { padding: 20px 17px; }
-    .photo-frame { height: 37vh; }
-    h1 { font-size: 40px; }
-    h2 { font-size: 27px; }
-    p { font-size: 12px; }
+    .photo-frame { height: 36vh; }
+    h1 { font-size: 39px; }
+    h2 { font-size: 26px; }
 }
 
-@media(max-width: 380px) {
+@media(max-width:380px) {
     .balloon-grid { gap: 5px; }
     .balloon { max-width: 49px; font-size: 20px; }
     .balloon-item small { font-size: 8px; }
 }
 
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
 </style>
 </head>
 
@@ -572,294 +607,478 @@ p {
 
 <audio id="birthdayMusic" src="birthday.mp3" preload="auto"></audio>
 
+<!-- PASSWORD SCREEN -->
+
 <div id="lock">
     <div class="lock-card">
-        <div class="heart">♡</div>
+
+        <div class="heart">❤️</div>
+
         <p class="kicker">A little world made just for you</p>
+
         <h1>For Anshika</h1>
+
         <div class="divider"></div>
+
         <p>
-            Some surprises are better felt than explained.
-            This one is all yours.
+            कुछ सरप्राइज़ शब्दों में नहीं,
+            सिर्फ़ महसूस किए जाते हैं।
+
+            This little surprise is all yours.
         </p>
 
         <form id="unlockForm">
-            <input type="password" id="password"
-                   placeholder="Enter your secret key" required>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Secret Key"
+                required
+            >
+
             <div id="error"></div>
+
             <button class="main-btn" type="submit">
                 Unlock Your Surprise ♡
             </button>
         </form>
 
         <p style="font-size:11px;margin-top:20px">
-            27 November · Made with love
+            27 November · Made with love by KBB
         </p>
+
     </div>
 </div>
 
 <div class="app">
 
-    <header class="topbar">
-        <div class="brand">Anshika's world ♡</div>
-        <button class="music-btn" id="musicBtn">♫ Music on</button>
-    </header>
+<header class="topbar">
+    <div class="brand">Anshika's World ♡</div>
+    <button class="music-btn" id="musicBtn">♫ Music On</button>
+</header>
 
-    <div class="progress-wrap">
-        <div class="progress" id="progress"></div>
+<div class="progress-wrap">
+    <div class="progress" id="progress"></div>
+</div>
+
+<!-- SLIDE 1: WELCOME -->
+
+<section class="slide welcome active">
+    <div class="content card">
+
+        <div class="heart">❤️</div>
+
+        <p class="kicker">27 November · A Beautiful Day</p>
+
+        <h1>Happy Birthday,<br>Anshika!</h1>
+
+        <div class="divider"></div>
+
+        <h2 style="font-family:'Dancing Script';color:var(--gold)">
+            With love, from KBB ♡
+        </h2>
+
+        <p class="hindi">
+            जन्मदिन की ढेर सारी शुभकामनाएँ, अंशिका!
+
+            तुम्हारी ज़िंदगी का हर आने वाला दिन
+            खुशियों, प्यार और खूबसूरत पलों से भरा रहे।
+
+            तुम्हारी मुस्कान कभी कम न हो,
+            और तुम्हारे हर सपने को एक नई उड़ान मिले।
+
+            तुम हमेशा यूँ ही मुस्कुराती रहो।
+        </p>
+
+        <button class="main-btn" onclick="next()">
+            Begin Our Little Story ✨
+        </button>
+
     </div>
+</section>
 
-    <!-- 1. Welcome -->
-    <section class="slide active">
-        <div class="content card">
-            <div class="heart">❤️</div>
-            <p class="kicker">27 November · A beautiful day</p>
-            <h1>Happy Birthday,<br>Anshika</h1>
-            <div class="divider"></div>
-            <p>
-                Today isn't just about another birthday.
-                It's about celebrating you, your smile,
-                your little quirks and all the happiness
-                you bring into the lives around you.
-            </p>
-            <button class="main-btn" onclick="next()">
-                Begin Our Little Story ✨
+<!-- PHOTO GALLERY IS GENERATED HERE -->
+
+<div id="gallery"></div>
+
+<!-- SLIDE 9: FRIENDSHIP -->
+
+<section class="slide friend">
+    <div class="content card">
+
+        <div class="heart">🫶</div>
+
+        <p class="kicker">A Bond of Our Own</p>
+
+        <h2>We Aren't Always Perfect...</h2>
+
+        <div class="divider"></div>
+
+        <p class="hindi">
+            कभी हमारी बातों का अंत हँसी पर होता है,
+            तो कभी छोटी-सी बात पर लड़ाई हो जाती है।
+
+            कभी एक-दूसरे को समझने में वक़्त लगता है,
+            और कभी बिना बोले ही सब समझ आ जाता है।
+
+            शायद यही हमारी दोस्ती की सबसे खूबसूरत बात है।
+        </p>
+
+        <button class="main-btn" onclick="next()">
+            Our Little Story ♡
+        </button>
+
+    </div>
+</section>
+
+<!-- SLIDE 10: FRIENDSHIP DETAILS -->
+
+<section class="slide friend">
+    <div class="content card">
+
+        <p class="kicker">The Little Things That Matter</p>
+
+        <h2>Our Kind of Friendship</h2>
+
+        <div class="story-line">
+            <strong>🥺 We Fight Sometimes</strong>
+            <p>कभी-कभी हमारी अपनी-अपनी बातें और अपने मूड होते हैं।</p>
+        </div>
+
+        <div class="story-line">
+            <strong>🤍 But We Make Up</strong>
+            <p>गुस्सा कितना भी हो, एक-दूसरे को मनाना भी जानते हैं।</p>
+        </div>
+
+        <div class="story-line">
+            <strong>🌙 We Understand Silence</strong>
+            <p>कभी शब्दों की ज़रूरत नहीं होती। खामोशी भी सब कह देती है।</p>
+        </div>
+
+        <div class="story-line">
+            <strong>🫶 We Stay Connected</strong>
+            <p>हर बार सब कुछ परफेक्ट नहीं होता, पर ये रिश्ता खास है।</p>
+        </div>
+
+        <button class="main-btn" onclick="next()">
+            A Special Birthday Wish 🌹
+        </button>
+
+    </div>
+</section>
+
+<!-- SLIDE 11: HINDI BIRTHDAY WISH -->
+
+<section class="slide wish-slide">
+    <div class="content card">
+
+        <div class="heart">🌹</div>
+
+        <p class="kicker">A Special Wish From KBB</p>
+
+        <h2 class="hindi">तुम्हारे नाम एक छोटी-सी दुआ</h2>
+
+        <div class="divider"></div>
+
+        <p class="hindi">
+            चाँद की रोशनी से भी खूबसूरत हो तुम्हारी हर सुबह,
+
+            और फूलों की खुशबू से महकती रहे तुम्हारी हर शाम।
+
+            जो चाहो वो तुम्हें मिले,
+            जो सपने देखो वो पूरे हों।
+
+            ज़िंदगी के हर मोड़ पर तुम्हें
+            खुशियाँ और अपनों का साथ मिले।
+
+            कभी उदासियों से सामना हो भी जाए,
+            तो तुम्हारी मुस्कान उन्हें हरा दे।
+
+            जन्मदिन की बहुत-बहुत शुभकामनाएँ, अंशिका! ❤️
+        </p>
+
+        <div class="signature">Lots of Love — KBB ♡</div>
+
+        <button class="main-btn" onclick="next()">
+            Let's Play Our Quiz ✨
+        </button>
+
+    </div>
+</section>
+
+<!-- SLIDE 12: QUIZ -->
+
+<section class="slide quiz-slide">
+    <div class="content card">
+
+        <p class="kicker">A Little Game For You</p>
+
+        <h2>Our Friendship Quiz</h2>
+
+        <p>Let's see how well you know our little world.</p>
+
+        <div class="divider"></div>
+
+        <div id="quizArea">
+
+            <div class="quiz-count" id="quizCount">
+                QUESTION 1 OF 7
+            </div>
+
+            <h2 id="question" style="font-size:21px"></h2>
+
+            <div id="options"></div>
+
+            <div class="quiz-feedback" id="feedback"></div>
+
+            <button
+                class="main-btn"
+                id="quizNext"
+                onclick="nextQuestion()"
+                style="display:none"
+            >
+                Next Question →
             </button>
+
         </div>
-    </section>
 
-    <!-- 2. Memories -->
-    <div id="gallery"></div>
+        <div id="quizResult" style="display:none">
 
-    <!-- 3. Friendship story -->
-    <section class="slide">
-        <div class="content card">
-            <div class="friendship-symbol">🫶</div>
-            <p class="kicker">A bond of our own</p>
-            <h2>We aren't always perfect...</h2>
-            <div class="divider"></div>
-            <p>
-                Kabhi humari baaton ka end hasi par hota hai,
-                aur kabhi chhoti si baat par ladai ho jaati hai.
-                Kabhi ek dusre ko samajhne mein waqt lagta hai,
-                aur kabhi bina bole sab samajh aa jaata hai.
+            <div class="heart">💗</div>
+
+            <h2>That Was Lovely!</h2>
+
+            <p id="scoreText"></p>
+
+            <p class="hindi" style="margin-top:12px">
+                तुम्हारे हर जवाब में हमारी दोस्ती की एक खूबसूरत याद छुपी है।
             </p>
-            <button class="main-btn" onclick="next()">And that's our story ♡</button>
+
+            <button class="main-btn" onclick="next()">
+                Continue Birthday Surprise ♡ →
+            </button>
+
+            <button
+                class="back-btn"
+                style="width:100%;margin-top:12px"
+                onclick="restartQuiz()"
+            >
+                Play Again ↺
+            </button>
+
         </div>
-    </section>
 
-    <section class="slide">
-        <div class="content card">
-            <p class="kicker">The little things that matter</p>
-            <h2>Our kind of friendship</h2>
+    </div>
+</section>
 
-            <div class="story-line">
-                <strong>🥺 We fight sometimes</strong>
-                <p>Kyuki hum dono ki apni-apni baatein aur apne moods hain.</p>
-            </div>
+<!-- SLIDE 13: BALLOONS -->
 
-            <div class="story-line">
-                <strong>🤍 But we make up</strong>
-                <p>Gussa kitna bhi ho, ek dusre ko manana bhi jaante hain.</p>
-            </div>
+<section class="slide wish-slide">
+    <div class="content card">
 
-            <div class="story-line">
-                <strong>🌙 We understand silence</strong>
-                <p>Kabhi words ki zaroorat nahi hoti. Khamoshi bhi sab keh deti hai.</p>
-            </div>
+        <p class="kicker">Five Little Surprises</p>
 
-            <div class="story-line">
-                <strong>🫶 We stay connected</strong>
-                <p>Har baar sab kuch perfect nahi hota, par ye rishta apni jagah special hai.</p>
-            </div>
+        <h2>Pop a Balloon, Find a Wish 🎈</h2>
 
-            <button class="main-btn" onclick="next()">Some fun now! 💗</button>
-        </div>
-    </section>
+        <p>
+            हर गुब्बारे में तुम्हारे लिए एक प्यारी-सी दुआ छुपी है।
+            Tap any balloon!
+        </p>
 
-    <!-- 4. Quiz -->
-    <section class="slide">
-        <div class="content card">
-            <p class="kicker">A little game for you</p>
-            <h2>Our Friendship Quiz</h2>
-            <p>Let's see how well you know the little world we share.</p>
+        <div class="balloon-grid" id="balloonGrid"></div>
 
-            <div class="divider"></div>
-
-            <div id="quizArea">
-                <div class="quiz-count" id="quizCount">QUESTION 1 OF 7</div>
-                <h2 id="question" style="font-size:22px;margin-top:15px"></h2>
-                <div id="options"></div>
-                <div class="quiz-feedback" id="feedback"></div>
-                <button class="main-btn" id="quizNext" onclick="nextQuestion()" style="display:none">
-                    Next Question →
-                </button>
-            </div>
-
-            <div id="quizResult" style="display:none">
-                <div class="heart">💗</div>
-                <h2>That was lovely!</h2>
-                <p id="scoreText"></p>
-                <button class="main-btn" onclick="restartQuiz()">Play Again ↺</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Balloons -->
-    <section class="slide">
-        <div class="content card">
-            <p class="kicker">Five little surprises</p>
-            <h2>Pop a balloon, find a wish</h2>
-            <p>Har balloon mein tumhare liye ek alag si wish chhupi hai.</p>
-
-            <div class="balloon-grid" id="balloonGrid"></div>
-
-            <div class="wish-box">
-                <p id="balloonWish">
-                    Choose any balloon and discover your surprise ♡
-                </p>
-            </div>
-
-            <button class="main-btn" onclick="next()">A wish for everyone ✨</button>
-        </div>
-    </section>
-
-    <!-- 6. Family and Dugu -->
-    <section class="slide">
-        <div class="content card">
-            <p class="kicker">Love that surrounds you</p>
-            <h2>For your beautiful family</h2>
-            <div class="heart">🏡</div>
-            <div class="divider"></div>
-            <p>
-                May your family always be surrounded by good health,
-                peace, laughter and togetherness.
-
-                <br><br>
-
-                May your home stay full of warm conversations,
-                little celebrations and countless reasons to smile.
-
-                <br><br>
-
-                Aap sabhi ko bahut saara pyaar aur dil se best wishes.
-                Hamesha khush rahiye. ❤️
+        <div class="wish-box">
+            <p id="balloonWish">
+                Choose any balloon and discover your surprise ♡
             </p>
-            <div class="divider"></div>
-            <h2>And a little wish for Dugu 🐾</h2>
-            <p>
-                Dugu ke naam bhi dher saara pyaar!
-                May your days be full of happiness, cute moments,
-                good health and endless smiles. ♡
-            </p>
-            <button class="main-btn" onclick="next()">One last letter 💌</button>
         </div>
-    </section>
 
-    <!-- 7. Letter -->
-    <section class="slide">
-        <div class="content card">
-            <p class="kicker">Something I wanted to say</p>
-            <h2>A letter from the heart</h2>
-            <p>There are a few things that pictures cannot express.</p>
+        <button class="main-btn" onclick="next()">
+            Wishes For Your Family ✨
+        </button>
 
-            <div class="envelope" onclick="openLetter()" id="envelope">💌</div>
-            <p style="font-size:11px">Tap to open your letter</p>
+    </div>
+</section>
 
-            <div class="letter" id="letter">
-                <div class="divider"></div>
-                <p class="letter-content">
+<!-- SLIDE 14: FAMILY AND DUGU -->
+
+<section class="slide family-slide">
+    <div class="content card">
+
+        <div class="heart">🏡</div>
+
+        <p class="kicker">Love That Surrounds You</p>
+
+        <h2>For Your Beautiful Family</h2>
+
+        <div class="divider"></div>
+
+        <p class="hindi">
+            आपके परिवार में हमेशा खुशियाँ बनी रहें।
+
+            हर दिन सेहत, सुकून, प्यार और हँसी लेकर आए।
+
+            घर में हमेशा अपनों का साथ,
+            मीठी बातें और खुशियों के पल बने रहें।
+
+            आप सभी को दिल से ढेर सारा प्यार
+            और बहुत-बहुत शुभकामनाएँ। ❤️
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>And A Little Wish For Dugu 🐾</h2>
+
+        <p class="hindi">
+            Dugu के नाम भी ढेर सारा प्यार!
+
+            हमेशा खुश रहो, स्वस्थ रहो,
+            और अपनी प्यारी-सी मौजूदगी से
+            सबके चेहरे पर मुस्कान लाते रहो।
+        </p>
+
+        <button class="main-btn" onclick="next()">
+            One Last Letter 💌
+        </button>
+
+    </div>
+</section>
+
+<!-- SLIDE 15: LETTER -->
+
+<section class="slide friend">
+    <div class="content card">
+
+        <p class="kicker">Something I Wanted To Say</p>
+
+        <h2>A Letter From The Heart</h2>
+
+        <p>There are a few things pictures cannot express.</p>
+
+        <div class="envelope" onclick="openLetter()" id="envelope">
+            💌
+        </div>
+
+        <p style="font-size:11px">
+            Tap to open your letter
+        </p>
+
+        <div class="letter" id="letter">
+
+            <div class="divider"></div>
+
+            <p class="letter-content">
 Dear Anshika,
 
 I don't think I say this often enough, but I'm genuinely grateful for the bond we share.
 
-Hum ladte hain, kabhi ek dusre ko pareshan bhi karte hain, kabhi baat karna band kar dete hain. Lekin phir kisi na kisi tarah ek dusre ko mana hi lete hain.
+हम लड़ते हैं, कभी एक-दूसरे को परेशान भी करते हैं, कभी बात करना बंद कर देते हैं। लेकिन फिर किसी न किसी तरह एक-दूसरे को मना ही लेते हैं।
 
-Aur shayad yahi humari dosti ki sabse khoobsurat baat hai.
+और शायद यही हमारी दोस्ती की सबसे खूबसूरत बात है।
 
-Kabhi tumhari khamoshi samajh aa jaati hai, kabhi meri baat tum bina kahe samajh leti ho. Har din perfect nahi hota, par kuch rishte apni imperfections ke saath hi khoobsurat hote hain.
+कभी तुम्हारी खामोशी समझ आ जाती है, कभी मेरी बात तुम बिना कहे समझ लेती हो।
+
+हर दिन परफेक्ट नहीं होता, पर कुछ रिश्ते अपनी कमियों के साथ ही खूबसूरत होते हैं।
 
 I hope life gives you everything your heart quietly wishes for.
 
 May you always find reasons to laugh, courage to follow your dreams and people who make you feel loved.
 
-Happy Birthday, Anshika.
+जन्मदिन की बहुत-बहुत शुभकामनाएँ।
 
 Thank you for being a beautiful part of my story. ❤️
-                </p>
-                <div class="signature">With lots of love ♡</div>
-            </div>
 
-            <button class="main-btn" onclick="next()">Our final moment ✨</button>
-        </div>
-    </section>
-
-    <!-- 8. Ending -->
-    <section class="slide">
-        <div class="content card">
-            <div class="heart">❤️</div>
-            <p class="kicker">Until all the memories ahead</p>
-            <h1>Here's to You</h1>
-            <div class="divider"></div>
-            <p>
-                I hope this little surprise made you smile.
-
-                <br><br>
-
-                Keep shining, keep laughing,
-                keep being wonderfully you.
-
-                <br><br>
-
-                And let's keep collecting stories,
-                silly fights, unexpected laughs
-                and memories worth remembering.
-
-                <br><br>
-
-                Happy Birthday once again, Anshika.
-                You deserve all the happiness in the world.
             </p>
 
-            <div class="signature">Always wishing you well ♡</div>
+            <div class="signature">With Lots of Love — KBB ♡</div>
 
-            <button class="main-btn" onclick="celebrate()">
-                A little more magic! 🎉
-            </button>
-
-            <button class="back-btn" style="width:100%;margin-top:12px"
-                    onclick="restart()">
-                Relive our story ↺
-            </button>
         </div>
-    </section>
+
+        <button class="main-btn" onclick="next()">
+            Our Final Moment ✨
+        </button>
+
+    </div>
+</section>
+
+<!-- SLIDE 16: FINAL -->
+
+<section class="slide final-slide">
+    <div class="content card">
+
+        <div class="heart">❤️</div>
+
+        <p class="kicker">Until All The Memories Ahead</p>
+
+        <h1>Here's To You</h1>
+
+        <div class="divider"></div>
+
+        <p>
+            I hope this little surprise made you smile.
+
+            Keep shining, keep laughing,
+            keep being wonderfully you.
+        </p>
+
+        <br>
+
+        <h2 class="hindi">बस यूँ ही मुस्कुराती रहना ❤️</h2>
+
+        <p class="hindi">
+            कुछ लोग ज़िंदगी में सिर्फ मिलते नहीं,
+            बल्कि अपनी एक खूबसूरत जगह बना लेते हैं।
+
+            तुम भी उन्हीं में से एक हो।
+
+            हमारी दोस्ती यूँ ही बनी रहे,
+            हमारी नोक-झोंक चलती रहे,
+            और हर साल तुम्हारा जन्मदिन
+            इससे भी ज़्यादा खूबसूरत बने।
+
+            तुम्हारे लिए ढेर सारा प्यार — KBB ❤️
+        </p>
+
+        <div class="signature">Happy Birthday, Anshika ♡</div>
+
+        <button class="main-btn" onclick="celebrate()">
+            A Little More Magic! 🎉
+        </button>
+
+        <button class="back-btn"
+                style="width:100%;margin-top:12px"
+                onclick="restart()">
+            Relive Our Story ↺
+        </button>
+
+    </div>
+</section>
 
 </div>
 
 <script>
 
-/* =================================
-   CONFIG
-================================= */
+/* =====================================
+   SETTINGS
+===================================== */
 
 const PASSWORD = "KBBKB2";
 
 const birthdayMusic = document.getElementById("birthdayMusic");
 
-let musicOn = true;
+let musicOn = false;
 let current = 0;
 
-const slides = document.querySelectorAll(".slide");
+const app = document.querySelector(".app");
 const progress = document.getElementById("progress");
 
-/* =================================
-   PHOTO MEMORIES
-================================= */
+/* =====================================
+   PHOTO GALLERY
+===================================== */
 
 const memories = [
     {
         photo: "anshika1.jpg",
-        caption: "Hamesha aise hi khilkhilati rehna. Tumhari smile bahut special hai. ❤️"
+        caption: "हमेशा ऐसे ही खिलखिलाती रहना। तुम्हारी मुस्कान बहुत खास है। ❤️"
     },
     {
         photo: "anshika2.jpg",
@@ -867,11 +1086,11 @@ const memories = [
     },
     {
         photo: "anshika3.jpg",
-        caption: "Humari dosti ki woh saari yaadein, jinhe yaad karke aaj bhi hasi aa jaati hai. 🤍"
+        caption: "हमारी दोस्ती की वो सारी यादें, जिन्हें याद करके आज भी हँसी आ जाती है। 🤝"
     },
     {
         photo: "anshika4.jpg",
-        caption: "Tumhare saath simple moments bhi special ban jaate hain. 🌹"
+        caption: "तुम्हारे साथ simple moments भी special बन जाते हैं। 🌹"
     },
     {
         photo: "anshika5.jpg",
@@ -883,22 +1102,27 @@ const memories = [
     },
     {
         photo: "anshika7.jpg",
-        caption: "Sari khushiyan tumhare naam. May life always be kind to you. 🌙"
+        caption: "सारी खुशियाँ तुम्हारे नाम। May life always be kind to you. 🌙"
     }
 ];
 
 const gallery = document.getElementById("gallery");
 
-memories.forEach((memory, i) => {
+memories.forEach((memory, index) => {
 
     const slide = document.createElement("section");
+
     slide.className = "slide";
 
     slide.innerHTML = `
         <div class="content card">
-            <p class="kicker">Memory ${i + 1} of 7</p>
+            <p class="kicker">Memory ${index + 1} of 7</p>
 
-            <img class="photo-frame" src="${memory.photo}" alt="Anshika memory">
+            <img
+                class="photo-frame"
+                src="${memory.photo}"
+                alt="Anshika memory ${index + 1}"
+            >
 
             <div class="photo-placeholder">
                 <span>♡</span>
@@ -909,12 +1133,14 @@ memories.forEach((memory, i) => {
 
             <div class="button-row">
                 <button class="back-btn" onclick="prev()">← Back</button>
-                <button class="main-btn" onclick="next()" style="margin:0">Next →</button>
+                <button class="main-btn" onclick="next()" style="margin:0">
+                    Next →
+                </button>
             </div>
         </div>
     `;
 
-    const img = slide.querySelector("img");
+    const img = slide.querySelector(".photo-frame");
     const placeholder = slide.querySelector(".photo-placeholder");
 
     img.onerror = () => {
@@ -926,36 +1152,97 @@ memories.forEach((memory, i) => {
 
 });
 
-/* =================================
+/* =====================================
+   DYNAMIC SLIDE NAVIGATION
+===================================== */
+
+function getSlides() {
+    return app.querySelectorAll(".slide");
+}
+
+function updateProgress() {
+
+    const slides = getSlides();
+
+    const percentage = ((current + 1) / slides.length) * 100;
+
+    progress.style.width = percentage + "%";
+
+}
+
+function showSlide(index) {
+
+    const slides = getSlides();
+
+    if (index < 0 || index >= slides.length) return;
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    current = index;
+
+    slides[current].classList.add("active");
+
+    slides[current].scrollTop = 0;
+
+    updateProgress();
+
+}
+
+function next() {
+
+    const slides = getSlides();
+
+    if (current < slides.length - 1) {
+        showSlide(current + 1);
+    }
+
+}
+
+function prev() {
+
+    if (current > 0) {
+        showSlide(current - 1);
+    }
+
+}
+
+/* =====================================
    PASSWORD AND MUSIC
-================================= */
+===================================== */
 
 document.getElementById("unlockForm").addEventListener("submit", function(e) {
 
     e.preventDefault();
 
-    const value = document.getElementById("password").value;
+    const entered = document.getElementById("password").value;
 
-    if (value === PASSWORD) {
+    if (entered === PASSWORD) {
 
         document.getElementById("lock").style.display = "none";
 
-        // Music starts directly from the successful user interaction.
+        // Start music directly from the password submit gesture.
         birthdayMusic.play().then(() => {
+
             musicOn = true;
-            document.getElementById("musicBtn").textContent = "♫ Music on";
+            document.getElementById("musicBtn").textContent = "♫ Music On";
+
         }).catch(() => {
+
             musicOn = false;
-            document.getElementById("musicBtn").textContent = "♫ Tap for music";
+            document.getElementById("musicBtn").textContent = "♫ Tap For Music";
+
         });
 
         updateProgress();
-        confettiBurst(120);
+
+        confettiBurst(100);
 
     } else {
 
         document.getElementById("error").textContent =
-            "Oops! That's not the right key. Try once more ♡";
+            "Wrong key! Try once more ♡";
 
         document.getElementById("password").value = "";
 
@@ -963,64 +1250,44 @@ document.getElementById("unlockForm").addEventListener("submit", function(e) {
 
 });
 
-/* =================================
-   MUSIC CONTROL
-================================= */
+/* =====================================
+   MUSIC BUTTON
+===================================== */
 
 document.getElementById("musicBtn").addEventListener("click", () => {
 
     if (musicOn) {
+
         birthdayMusic.pause();
+
         musicOn = false;
-        document.getElementById("musicBtn").textContent = "♫ Music off";
+
+        document.getElementById("musicBtn").textContent = "♫ Music Off";
+
     } else {
+
         birthdayMusic.play().then(() => {
+
             musicOn = true;
-            document.getElementById("musicBtn").textContent = "♫ Music on";
+
+            document.getElementById("musicBtn").textContent = "♫ Music On";
+
         }).catch(() => {
-            document.getElementById("musicBtn").textContent = "♫ Try again";
+
+            document.getElementById("musicBtn").textContent = "♫ Try Again";
+
         });
+
     }
 
 });
 
-/* =================================
-   NAVIGATION
-================================= */
-
-function updateProgress() {
-    progress.style.width = ((current + 1) / slides.length * 100) + "%";
-}
-
-function showSlide(index) {
-
-    slides[current].classList.remove("active");
-
-    current = index;
-
-    slides[current].classList.add("active");
-
-    updateProgress();
-
-}
-
-function next() {
-    if (current < slides.length - 1) {
-        showSlide(current + 1);
-    }
-}
-
-function prev() {
-    if (current > 0) {
-        showSlide(current - 1);
-    }
-}
-
-/* =================================
-   SEVEN QUIZ QUESTIONS
-================================= */
+/* =====================================
+   QUIZ
+===================================== */
 
 const questions = [
+
     {
         q: "Humari dosti ki sabse special baat kya hai?",
         options: [
@@ -1030,8 +1297,9 @@ const questions = [
             "Kabhi baat na karna"
         ],
         answer: 1,
-        feedback: "Exactly! Kabhi kabhi khamoshi bhi sab keh deti hai. ♡"
+        feedback: "Exactly! कभी-कभी खामोशी भी सब कह देती है। ♡"
     },
+
     {
         q: "Jab hum dono ladte hain, phir kya hota hai?",
         options: [
@@ -1043,6 +1311,7 @@ const questions = [
         answer: 1,
         feedback: "Bilkul! Narazgi ke baad manana bhi toh humari story hai. ❤️"
     },
+
     {
         q: "Humari friendship ka asli superpower kya hai?",
         options: [
@@ -1052,8 +1321,9 @@ const questions = [
             "Sirf formal rehna"
         ],
         answer: 0,
-        feedback: "You got it! Understanding makes a bond beautiful. ✨"
+        feedback: "Understanding makes a bond beautiful. ✨"
     },
+
     {
         q: "Jab koi ek chup ho jaata hai, toh doosre ko kya karna chahiye?",
         options: [
@@ -1063,8 +1333,9 @@ const questions = [
             "Bina soche chale jaana"
         ],
         answer: 1,
-        feedback: "That's right. Sometimes being there is enough. 🤍"
+        feedback: "Sometimes being there is enough. 🤍"
     },
+
     {
         q: "Humari yaadon mein sabse zyada kya hai?",
         options: [
@@ -1074,8 +1345,9 @@ const questions = [
             "Kuch bhi nahi"
         ],
         answer: 0,
-        feedback: "Those little moments are often the biggest memories. 🌷"
+        feedback: "Those little moments are the biggest memories. 🌷"
     },
+
     {
         q: "Ek beautiful friendship mein sabse zaroori kya hai?",
         options: [
@@ -1085,8 +1357,9 @@ const questions = [
             "Kabhi sorry na bolna"
         ],
         answer: 1,
-        feedback: "Absolutely! Care, respect and understanding matter most. 💗"
+        feedback: "Care, respect and understanding matter most. 💗"
     },
+
     {
         q: "Aage humari friendship ke liye tumhari wish kya hai?",
         options: [
@@ -1096,8 +1369,9 @@ const questions = [
             "Ye sab!"
         ],
         answer: 3,
-        feedback: "Perfect answer! Here's to many more memories together. 🫶"
+        feedback: "Perfect! Here's to many more memories together. 🫶"
     }
+
 ];
 
 let quizIndex = 0;
@@ -1111,7 +1385,7 @@ function renderQuestion() {
     answered = false;
 
     document.getElementById("quizCount").textContent =
-        `QUESTION ${quizIndex + 1} OF 7`;
+        `QUESTION ${quizIndex + 1} OF ${questions.length}`;
 
     document.getElementById("question").textContent = q.q;
 
@@ -1128,9 +1402,12 @@ function renderQuestion() {
         const btn = document.createElement("button");
 
         btn.className = "quiz-option";
+
         btn.textContent = option;
 
-        btn.addEventListener("click", () => chooseAnswer(index, btn));
+        btn.addEventListener("click", () => {
+            chooseAnswer(index, btn);
+        });
 
         options.appendChild(btn);
 
@@ -1162,24 +1439,24 @@ function chooseAnswer(index, selected) {
 
         quizScore++;
 
-        document.getElementById("feedback").textContent =
-            q.feedback;
-
-        confettiBurst(25);
+        confettiBurst(20);
 
     } else {
 
         selected.classList.add("wrong");
 
-        document.getElementById("feedback").textContent =
-            "No worries! " + q.feedback;
-
     }
 
-    document.getElementById("quizNext").style.display = "block";
+    document.getElementById("feedback").textContent = q.feedback;
 
-    document.getElementById("quizNext").textContent =
-        quizIndex === 6 ? "See my result ♡" : "Next Question →";
+    const nextBtn = document.getElementById("quizNext");
+
+    nextBtn.style.display = "block";
+
+    nextBtn.textContent =
+        quizIndex === questions.length - 1
+        ? "See My Result ♡"
+        : "Next Question →";
 
 }
 
@@ -1187,9 +1464,10 @@ function nextQuestion() {
 
     if (!answered) return;
 
-    if (quizIndex < 6) {
+    if (quizIndex < questions.length - 1) {
 
         quizIndex++;
+
         renderQuestion();
 
     } else {
@@ -1199,7 +1477,7 @@ function nextQuestion() {
         document.getElementById("quizResult").style.display = "block";
 
         document.getElementById("scoreText").textContent =
-            `You got ${quizScore} out of 7! But honestly, the best part isn't the score — it's all the memories we share. ♡`;
+            `You got ${quizScore} out of ${questions.length}! But honestly, the best part isn't the score — it's all the memories we share. ♡`;
 
     }
 
@@ -1208,9 +1486,13 @@ function nextQuestion() {
 function restartQuiz() {
 
     quizIndex = 0;
+
     quizScore = 0;
 
+    answered = false;
+
     document.getElementById("quizArea").style.display = "block";
+
     document.getElementById("quizResult").style.display = "none";
 
     renderQuestion();
@@ -1219,24 +1501,30 @@ function restartQuiz() {
 
 renderQuestion();
 
-/* =================================
-   FIVE INTERACTIVE BALLOONS
-================================= */
+/* =====================================
+   FIVE BALLOONS
+===================================== */
 
 const wishes = [
+
     "May your smile always stay this beautiful, and may every day give you a new reason to smile. ❤️",
+
     "May all your dreams find their way to reality. You deserve every beautiful thing life has to offer. ✨",
+
     "May your heart always feel loved, your mind stay peaceful and your journey be full of happiness. 🌷",
+
     "May you keep growing, shining and becoming everything you have ever dreamed of being. 💗",
-    "And most importantly, may you never forget how special you are to the people who care about you. ♡"
+
+    "May you never forget how special you are to the people who care about you. ♡"
+
 ];
 
 const balloonColors = [
-    "#e52c73",
-    "#a64b9b",
-    "#f0a2bd",
-    "#c43c58",
-    "#d4a34c"
+    "#ed276d",
+    "#a642a2",
+    "#e88bb7",
+    "#c32b52",
+    "#d5a23d"
 ];
 
 const balloonGrid = document.getElementById("balloonGrid");
@@ -1249,7 +1537,8 @@ wishes.forEach((wish, index) => {
 
     button.innerHTML = `
         <span class="balloon"
-              style="background:${balloonColors[index]};color:${balloonColors[index]}">
+          style="background:${balloonColors[index]};
+                 --balloon-color:${balloonColors[index]}">
             <span style="color:white">♡</span>
         </span>
         <small>Wish ${index + 1}</small>
@@ -1261,7 +1550,7 @@ wishes.forEach((wish, index) => {
 
         button.classList.add("opened");
 
-        confettiBurst(20);
+        confettiBurst(25);
 
     });
 
@@ -1269,9 +1558,9 @@ wishes.forEach((wish, index) => {
 
 });
 
-/* =================================
+/* =====================================
    LETTER
-================================= */
+===================================== */
 
 function openLetter() {
 
@@ -1284,9 +1573,9 @@ function openLetter() {
 
 }
 
-/* =================================
+/* =====================================
    CONFETTI
-================================= */
+===================================== */
 
 function confettiBurst(amount = 100) {
 
@@ -1294,9 +1583,9 @@ function confettiBurst(amount = 100) {
 
     confetti({
         particleCount: amount,
-        spread: 80,
+        spread: 85,
         origin: { y: .65 },
-        colors: ["#ff70a8", "#f5d18c", "#ffffff", "#a31350"]
+        colors: ["#ff397f","#f6ce79","#ffffff","#a90048"]
     });
 
 }
@@ -1314,7 +1603,7 @@ function celebrate() {
             angle: 60,
             spread: 60,
             origin: { x: 0 },
-            colors: ["#ff70a8", "#f5d18c", "#ffffff"]
+            colors: ["#ff397f","#f6ce79","#ffffff"]
         });
 
         confetti({
@@ -1322,7 +1611,7 @@ function celebrate() {
             angle: 120,
             spread: 60,
             origin: { x: 1 },
-            colors: ["#ff70a8", "#f5d18c", "#ffffff"]
+            colors: ["#ff397f","#f6ce79","#ffffff"]
         });
 
         if (Date.now() < end) {
@@ -1333,14 +1622,11 @@ function celebrate() {
 
 }
 
-/* =================================
-   REPLAY
-================================= */
+/* =====================================
+   RESTART
+===================================== */
 
 function restart() {
-
-    birthdayMusic.pause();
-    birthdayMusic.currentTime = 0;
 
     showSlide(0);
 
@@ -1350,17 +1636,17 @@ function restart() {
 
 }
 
-/* =================================
+/* =====================================
    FLOATING PARTICLES
-================================= */
+===================================== */
 
-const particles = document.getElementById("particles");
+const particleContainer = document.getElementById("particles");
 
 function createParticle() {
 
     const p = document.createElement("div");
 
-    const symbols = ["♡", "✦", "✧", "♥"];
+    const symbols = ["♡","✦","✧","♥"];
 
     p.className = "particle";
 
@@ -1373,13 +1659,15 @@ function createParticle() {
 
     p.style.animationDuration = (8 + Math.random() * 7) + "s";
 
-    particles.appendChild(p);
+    particleContainer.appendChild(p);
 
     setTimeout(() => p.remove(), 16000);
 
 }
 
 setInterval(createParticle, 650);
+
+/* INITIAL PROGRESS */
 
 updateProgress();
 
