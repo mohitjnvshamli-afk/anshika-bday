@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshika's 27th Nov Celebration ✨</title>
+    <title>Anshika's 27th Nov Special ✨</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; background: #07060b; color: #fff; font-family: 'Poppins', sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .slide { position: absolute; width: 90%; max-width: 450px; opacity: 0; pointer-events: none; transition: 0.8s ease; transform: scale(0.9); }
-        .slide.active { opacity: 1; pointer-events: auto; transform: scale(1); }
-        .card { background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(20px); padding: 35px; border-radius: 45px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .img-box { width: 160px; height: 160px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid #ff0080; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .btn { background: linear-gradient(45deg, #ff0080, #7928ca); border: none; padding: 15px; color: white; border-radius: 50px; cursor: pointer; width: 100%; margin-top: 15px; font-weight: 600; transition: 0.3s; }
-        .btn:hover { transform: translateY(-3px); }
-        #overlay { position: fixed; inset: 0; z-index: 100; background: #07060b; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        h1 { font-family: 'Dancing Script', cursive; color: #ffd700; margin-bottom: 10px; }
+        :root { --accent: #ff0080; --bg: #050505; }
+        body { margin: 0; background: var(--bg); color: #fff; font-family: 'Poppins', sans-serif; overflow: hidden; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .app-shell { width: 100%; max-width: 400px; height: 100vh; position: relative; }
+        .slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px; }
+        .slide.active { opacity: 1; pointer-events: auto; }
+        .card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 40px; text-align: center; width: 85%; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+        .photo-frame { width: 100%; height: 300px; border-radius: 30px; border: 3px solid var(--accent); object-fit: cover; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,0,128,0.3); }
+        .btn-group { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+        .nav-btn { background: rgba(255,255,255,0.15); border: none; padding: 12px 25px; color: white; border-radius: 50px; cursor: pointer; }
+        .primary-btn { background: var(--accent); padding: 15px 30px; border-radius: 50px; border: none; color: white; font-weight: bold; width: 100%; margin-top: 15px; }
+        #lock-screen { position: fixed; inset: 0; z-index: 1000; background: #000; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     </style>
 </head>
 <body>
@@ -24,68 +25,95 @@
 <audio id="bdayTune" src="birthday.mp3"></audio>
 <audio id="romanticTune" src="romantic.mp3" loop></audio>
 
-<div id="overlay">
-    <h2>Enter Secret Key ✨</h2>
-    <input type="password" id="pass" style="padding:15px; border-radius:20px; text-align:center; background:transparent; border:1px solid #ff0080; color:white; margin-bottom:15px;">
-    <button class="btn" style="width:200px" onclick="unlock()">Unlock Magic</button>
+<!-- Lock Screen -->
+<div id="lock-screen">
+    <h2 style="color:var(--accent)">Anshika's Special 27 Nov ✨</h2>
+    <input type="password" id="pass" placeholder="Enter Secret Key" style="padding:15px; border-radius:20px; border:1px solid var(--accent); background:transparent; color:white; text-align:center; margin-bottom:15px; width:200px;">
+    <button class="primary-btn" style="width:200px" onclick="unlock()">Unlock Magic</button>
 </div>
 
-<div id="app">
-    <!-- 1. Intro -->
-    <div class="slide active"><div class="card"><div class="img-box"><img src="anshika1.jpg"></div><h1>Happy Birthday Anshika! 🎂</h1><p>27th Nov - A day as beautiful as you.</p><button class="btn" onclick="next()">Start Journey ✨</button></div></div>
+<div class="app-shell">
+    <!-- Slide 1: Welcome -->
+    <div class="slide active">
+        <div class="card">
+            <h1>Happy Birthday, Anshika! 🎂</h1>
+            <p>27th November is special, just like you.</p>
+            <button class="primary-btn" onclick="next()">Start Journey</button>
+        </div>
+    </div>
 
-    <!-- 2. Balloons -->
-    <div class="slide"><div class="card"><h3>Birthday Wishes 🎈</h3><p>Hamesha khilkhilati raho, dreams pure ho, bonding bani rahe, success mile, you are the best! ❤️</p><button class="btn" onclick="next()">Next</button></div></div>
+    <!-- Slides 2-8: Photo Gallery + Quiz -->
+    <script>
+        const gallery = ["", "Hamesha khilkhilati raho 😊", "Humari dosti ki yaadein 🤝", "Tumhara muskurana life hai ❤️", "Best partner ever! 🌟", "Family goals! 🏡", "My heart beats for you! ✨", "Sari khushiyan tumhare naam"];
+        for(let i=1; i<=7; i++) {
+            document.write(`
+                <div class="slide">
+                    <img src="anshika${i}.jpg" class="photo-frame">
+                    <div class="card">
+                        <p>${gallery[i]}</p>
+                        <div class="btn-group">
+                            <button class="nav-btn" onclick="prev()">Back</button>
+                            <button class="nav-btn" onclick="next()">Next</button>
+                        </div>
+                    </div>
+                </div>
+            `);
+        }
+    </script>
 
-    <!-- 3-9. Quiz & Images Loop -->
-    <div class="slide"><div class="card"><div class="img-box"><img src="anshika2.jpg"></div><h3>Q1: Favourite dost?</h3><button class="btn" onclick="next()">KBB</button></div></div>
-    <div class="slide"><div class="card"><div class="img-box"><img src="anshika3.jpg"></div><h3>Q2: Birthday celebrate ready?</h3><button class="btn" onclick="next()">Yes! Always</button></div></div>
-    <div class="slide"><div class="card"><div class="img-box"><img src="anshika4.jpg"></div><h3>Q3: Dosti future mein behtar?</h3><button class="btn" onclick="next()">Yes, Absolutely</button></div></div>
-    <div class="slide"><div class="card"><div class="img-box"><img src="anshika5.jpg"></div><h3>Q4: Ghar mein sabse pyara?</h3><button class="btn" onclick="next()">Duggu/Anshika</button></div></div>
-    <div class="slide"><div class="card"><div class="img-box"><img src="anshika6.jpg"></div><h3>Q5: Is dosti ko khone ka dar?</h3><button class="btn" onclick="next()">Yes, bohat zyada</button></div></div>
-    <div class="slide"><div class="card"><div class="img-box"><img src="anshika7.jpg"></div><h3>Q6: Dosti ke liye kabhi roye ho?</h3><button class="btn" onclick="next()">Yes</button></div></div>
-    <div class="slide"><div class="card"><h3>Q7: Happiness milti hai?</h3><button class="btn" onclick="next()">Yes, Always</button></div></div>
-
-    <!-- 10-13. Unique Experience -->
-    <div class="slide"><div class="card"><h3>Virtual Cake Cutting 🎂</h3><p>Ye cake tumhare un sabhi sapno ke liye hai.</p><button class="btn" onclick="next()">Cut Cake 🍰</button></div></div>
-    <div class="slide"><div class="card"><h3>Family & Goals 🏡</h3><p>Tumhare family goals aur mere sath ka safar... hamesha khushaal rahe.</p><button class="btn" onclick="next()">Future Together</button></div></div>
-    <div class="slide"><div class="card"><h3>Deep Promise 💫</h3><p>Zindagi ki har mushkil mein main tumhara humsafar banke khada rahunga.</p><button class="btn" onclick="next()">I Promise</button></div></div>
-
-    <!-- 14. Final Celebration -->
+    <!-- Slide 9: Promise -->
     <div class="slide">
         <div class="card">
-            <h1>Stay Forever Mine ❤️</h1>
-            <p>Dosti se shuru hua ye safar, kya tum isse life-partner tak le jana chahogi?</p>
-            <button class="btn" onclick="finalCeleb()">YES, FOREVER! 🎉</button>
+            <h3>Future & Promise 💫</h3>
+            <p>Zindagi ki har mushkil mein main tumhara humsafar banke khada rahunga.</p>
+            <button class="primary-btn" onclick="next()">Confirm Promise</button>
+        </div>
+    </div>
+
+    <!-- Final Slide -->
+    <div class="slide">
+        <div class="card">
+            <h1>Stay Mine Forever ❤️</h1>
+            <p>Dosti se shuru hua ye rishta, kya tum isse life-partner tak le jana chahogi?</p>
+            <button class="primary-btn" onclick="finalCeleb()">YES, FOREVER! 🎉</button>
         </div>
     </div>
 </div>
 
 <script>
-    let cur = 0;
+    let current = 0;
     const slides = document.querySelectorAll('.slide');
     const bday = document.getElementById('bdayTune');
     const rom = document.getElementById('romanticTune');
 
     function unlock() {
         if(document.getElementById('pass').value === "KBBKB2") {
-            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('lock-screen').style.display = 'none';
             bday.play();
         } else { alert("Galat Key! 😉"); }
     }
 
     function next() {
-        slides[cur].classList.remove('active');
-        cur++;
-        if(cur < slides.length) {
-            slides[cur].classList.add('active');
-            confetti({ particleCount: 150, spread: 70 });
+        if(current < slides.length - 1) {
+            slides[current].classList.remove('active');
+            current++;
+            slides[current].classList.add('active');
+            if(current === 8) { bday.pause(); rom.play(); }
+            confetti({ particleCount: 50, spread: 30 });
         }
-        if(cur >= 9) { bday.pause(); rom.play(); }
+    }
+
+    function prev() {
+        if(current > 0) {
+            slides[current].classList.remove('active');
+            current--;
+            slides[current].classList.add('active');
+        }
     }
 
     function finalCeleb() {
         confetti({ particleCount: 1000, spread: 360, origin: { y: 0.5 } });
+        alert("Happy Birthday Anshika! Love you to the moon and back.");
     }
 </script>
 </body>
