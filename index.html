@@ -4,284 +4,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Anshika ❤️</title>
+<title>For Anshika ❤️</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
-  --pink: #ff4f91;
-  --rose: #ff8db5;
-  --gold: #ffd58a;
-  --wine: #31051d;
-  --white: #fff5fa;
+  --bg1:#10051f;
+  --bg2:#321044;
+  --pink:#ff72b6;
+  --purple:#a978ff;
+  --gold:#ffe0a3;
+  --white:#fff4fc;
 }
 
-body {
-  min-height: 100vh;
-  font-family: Georgia, 'Segoe UI', sans-serif;
-  color: var(--white);
-  background:
-    radial-gradient(circle at top left, #7c174c, transparent 45%),
-    radial-gradient(circle at bottom right, #68133e, transparent 45%),
-    linear-gradient(135deg, #18000e, #3d0927, #19000f);
-  overflow-x: hidden;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  min-height:100vh;
+  color:var(--white);
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2),#170a32);
+  overflow-x:hidden;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  font: inherit;
+button{font:inherit;cursor:pointer}
+
+#musicButton{
+  position:fixed;
+  top:15px;
+  right:14px;
+  z-index:10001;
+  border:1px solid #ffffff66;
+  border-radius:30px;
+  padding:12px 17px;
+  color:white;
+  background:linear-gradient(135deg,#b44bce,#fa65a9);
+  box-shadow:0 0 20px #df6bff77;
+  font-weight:bold;
 }
 
-#musicButton {
-  position: fixed;
-  z-index: 10000;
-  top: 14px;
-  right: 14px;
-  padding: 11px 17px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #ff4f91, #b51e62);
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 5px 20px #ff4f9166;
-  border: 1px solid #ffffff66;
+#musicStatus{
+  position:fixed;
+  z-index:10001;
+  top:61px;
+  right:15px;
+  font:12px Arial,sans-serif;
+  color:#ffe1f4;
+  max-width:220px;
+  text-align:right;
 }
 
-#musicStatus {
-  position: fixed;
-  z-index: 10000;
-  top: 62px;
-  right: 15px;
-  font-size: 11px;
-  color: #ffd9e8;
+.app{padding:35px 14px}
+
+.slide{
+  display:none;
+  width:100%;
+  max-width:850px;
+  min-height:82vh;
+  margin:20px auto;
+  padding:38px 22px;
+  text-align:center;
+  border:1px solid #ffffff35;
+  border-radius:28px;
+  background:linear-gradient(145deg,#ffffff1b,#ffffff08);
+  box-shadow:0 15px 55px #0008,0 0 30px #d56bff18;
+  backdrop-filter:blur(12px);
 }
 
-.app {
-  width: 100%;
-  min-height: 100vh;
-  padding: 35px 15px;
+.slide.active{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  animation:slideIn .7s ease;
 }
 
-.slide {
-  display: none;
-  width: 100%;
-  max-width: 850px;
-  min-height: 80vh;
-  margin: 25px auto;
-  padding: 35px 24px;
-  text-align: center;
-  border: 1px solid #ffffff38;
-  border-radius: 25px;
-  background: linear-gradient(145deg, #ffffff18, #ffffff08);
-  box-shadow: 0 15px 50px #00000055;
-  backdrop-filter: blur(12px);
-  animation: appear .6s ease;
+@keyframes slideIn{
+  from{opacity:0;transform:translateY(25px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
 
-.slide.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+h1{
+  font-size:clamp(30px,6vw,52px);
+  color:#ff9acb;
+  text-shadow:0 0 15px #ff56b1,0 0 35px #a94fff;
+  margin-bottom:20px;
+  animation:glow 2.5s infinite alternate;
 }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+h2{
+  color:var(--gold);
+  font-size:clamp(23px,4vw,34px);
+  margin:14px 0;
 }
 
-h1 {
-  color: #ff9cbe;
-  font-size: clamp(30px, 6vw, 52px);
-  margin-bottom: 20px;
-  text-shadow: 0 0 20px #ff4f91;
+p{
+  max-width:680px;
+  margin:11px auto;
+  font-size:18px;
+  line-height:1.8;
 }
 
-h2 {
-  color: var(--gold);
-  font-size: clamp(23px, 4vw, 34px);
-  margin-bottom: 18px;
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff56b1}
+  to{text-shadow:0 0 25px #ff56b1,0 0 45px #a94fff}
 }
 
-p {
-  font-size: 18px;
-  line-height: 1.8;
-  margin: 12px auto;
-  max-width: 680px;
+.main-btn{
+  padding:13px 25px;
+  margin:17px 6px 0;
+  color:white;
+  border-radius:30px;
+  background:linear-gradient(135deg,#b84edc,#fa64a9);
+  box-shadow:0 5px 22px #df5fff66;
+  font-weight:bold;
+  border:1px solid #ffffff55;
+  transition:.2s;
+}
+.main-btn:hover{transform:scale(1.06)}
+
+input{
+  width:min(100%,330px);
+  padding:14px;
+  margin:17px auto;
+  border:1px solid #ff9acb;
+  border-radius:13px;
+  font-size:17px;
+  text-align:center;
+  background:#fff5fb;
+  color:#301039;
 }
 
-.highlight {
-  color: #ffb2cf;
-  font-weight: bold;
+.error{color:#ffc2d9;min-height:25px}
+
+.photo{
+  width:100%;
+  max-width:650px;
+  max-height:65vh;
+  object-fit:contain;
+  margin:18px auto;
+  border-radius:20px;
+  border:2px solid #ff9acb;
+  box-shadow:0 0 30px #fa64a955;
+  background:#170a32;
 }
 
-.main-btn {
-  margin: 20px 7px 0;
-  padding: 13px 25px;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  background: linear-gradient(135deg, #ff4f91, #a90e53);
-  box-shadow: 0 5px 20px #ff4f9144;
-  transition: .2s;
+.photo-placeholder{
+  display:none;
+  padding:25px;
+  margin:15px;
+  border:1px dashed #ff9acb;
+  border-radius:15px;
 }
 
-.main-btn:hover {
-  transform: scale(1.05);
+.quiz-option{
+  width:min(100%,520px);
+  display:block;
+  margin:9px auto;
+  padding:14px;
+  color:white;
+  background:#ffffff16;
+  border:1px solid #ff9acb77;
+  border-radius:14px;
+  text-align:left;
+  transition:.2s;
+}
+.quiz-option:hover,.quiz-option.selected{
+  background:#a93d9d;
+  border-color:#ffd2ed;
+}
+.quiz-option:disabled{opacity:.8}
+
+#quizFeedback,#balloonWish{
+  min-height:45px;
+  color:var(--gold);
+  font-size:18px;
 }
 
-input {
-  width: min(100%, 330px);
-  padding: 14px;
-  margin: 15px auto;
-  border-radius: 12px;
-  border: 1px solid #ff9cbe;
-  background: #ffffffed;
-  color: #390c24;
-  font-size: 17px;
-  text-align: center;
-  outline: none;
+.balloon-area{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+  margin:30px auto;
+}
+.balloon{
+  width:76px;
+  height:100px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff91c8,#9f50e9);
+  box-shadow:inset -9px -8px 12px #4b174b66,0 0 18px #ff72b677;
+  font-size:28px;
+  color:white;
+  animation:float 1.8s ease-in-out infinite alternate;
+}
+.balloon:nth-child(even){animation-delay:.5s}
+@keyframes float{
+  to{transform:translateY(-13px) rotate(5deg)}
 }
 
-.error {
-  color: #ffb3c9;
-  min-height: 24px;
+.letter{
+  background:#fff0f8;
+  color:#501c50;
+  border-radius:18px;
+  padding:25px;
+  line-height:1.9;
+  max-width:650px;
+  margin:20px auto;
 }
 
-.photo {
-  display: block;
-  width: 100%;
-  max-width: 650px;
-  max-height: 65vh;
-  object-fit: contain;
-  margin: 20px auto;
-  border-radius: 18px;
-  background: #16000d;
-  border: 2px solid #ffb2cf;
-  box-shadow: 0 10px 35px #00000066;
+.heart{
+  position:fixed;
+  top:-40px;
+  z-index:999;
+  pointer-events:none;
+  animation:heartFall linear forwards;
+  text-shadow:0 0 12px #ff55ae;
+}
+@keyframes heartFall{
+  0%{transform:translateY(-5vh) rotate(0deg);opacity:0}
+  10%{opacity:1}
+  100%{transform:translateY(110vh) rotate(360deg);opacity:0}
 }
 
-.photo-placeholder {
-  display: none;
-  padding: 35px;
-  border: 1px dashed #ffb2cf;
-  border-radius: 15px;
-  margin: 15px;
+.heart-burst{
+  position:fixed;
+  z-index:9999;
+  pointer-events:none;
+  font-size:25px;
+  animation:burst 1.5s ease-out forwards;
+}
+@keyframes burst{
+  0%{transform:translate(0,0) scale(.4);opacity:1}
+  100%{transform:translate(var(--x),var(--y)) scale(1.6);opacity:0}
 }
 
-.quiz-option {
-  display: block;
-  width: min(100%, 500px);
-  padding: 13px;
-  margin: 9px auto;
-  color: white;
-  background: #ffffff18;
-  border: 1px solid #ff9cbe77;
-  border-radius: 12px;
-  text-align: left;
-}
+footer{text-align:center;padding:20px;color:#f9c8ed}
 
-.quiz-option:hover {
-  background: #ff4f9144;
-}
-
-.quiz-option.selected {
-  background: #c52c70;
-  border-color: white;
-}
-
-#quizFeedback {
-  min-height: 30px;
-  color: var(--gold);
-}
-
-.balloon-area {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px auto;
-}
-
-.balloon {
-  width: 90px;
-  height: 115px;
-  border-radius: 50% 50% 45% 45%;
-  background: linear-gradient(135deg, #ff8db5, #d51d69);
-  box-shadow: inset -10px -8px 15px #780b3c66,
-              0 0 20px #ff4f9177;
-  color: white;
-  font-size: 30px;
-  position: relative;
-  animation: float 2s ease-in-out infinite alternate;
-}
-
-.balloon:nth-child(2) { animation-delay: .3s; }
-.balloon:nth-child(3) { animation-delay: .6s; }
-.balloon:nth-child(4) { animation-delay: .9s; }
-.balloon:nth-child(5) { animation-delay: 1.2s; }
-
-.balloon::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 35px;
-  background: #ffd6e5;
-  bottom: -35px;
-  left: 50%;
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-12px); }
-}
-
-#balloonWish {
-  min-height: 70px;
-  color: var(--gold);
-  font-size: 20px;
-}
-
-.letter {
-  padding: 25px;
-  background: #fff0f6;
-  color: #5b1638;
-  border-radius: 15px;
-  line-height: 1.9;
-  max-width: 650px;
-  margin: 20px auto;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #ffc2d9;
-  font-size: 14px;
-}
-
-@media(max-width: 600px) {
-  .slide {
-    padding: 28px 15px;
-    min-height: 78vh;
-  }
-  p { font-size: 16px; }
-  .photo { max-height: 55vh; }
-  #musicButton { top: 10px; right: 10px; }
+@media(max-width:600px){
+  .slide{padding:30px 15px;min-height:80vh}
+  p{font-size:16px}
+  .photo{max-height:55vh}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC PLAYER -->
 <audio id="bgMusic" loop preload="auto">
   <source src="./birthday.mp3" type="audio/mpeg">
-  Your browser does not support audio.
 </audio>
 
 <button id="musicButton" type="button">🎵 Music ON</button>
@@ -289,170 +259,166 @@ footer {
 
 <div class="app">
 
-<!-- SLIDE 1: PASSWORD -->
+<!-- 1 PASSWORD -->
 <section class="slide active">
-  <h1>💗 A Special Surprise 💗</h1>
-  <h2>For Anshika</h2>
-  <p>Ek chhota sa surprise hai tumhare liye...</p>
-  <p class="highlight">Password enter karo aur apni birthday journey shuru karo ❤️</p>
-
+  <h1>💜 A Little Magic for You 💜</h1>
+  <h2>Dear Anshika 🌸</h2>
+  <p>Ek surprise hai jo sirf tumhare liye banaya hai...</p>
+  <p>Ready ho apni special birthday journey ke liye? 🥹</p>
   <form id="passwordForm">
     <input id="passwordInput" type="password"
-      placeholder="Enter Secret Password" autocomplete="off" required>
+      placeholder="Enter Secret Password" required>
     <br>
     <button class="main-btn" type="submit">Unlock My Surprise 💝</button>
   </form>
   <p class="error" id="passwordError"></p>
 </section>
 
-<!-- SLIDE 2 -->
+<!-- 2 WELCOME -->
 <section class="slide">
   <h1>🎂 Happy Birthday Anshika! 🎂</h1>
-  <p>Aaj ka din bahut special hai, kyunki aaj ke din ek bahut hi special insaan duniya mein aaya tha.</p>
-  <p class="highlight">Tumhari smile hamesha aise hi chamakti rahe. ❤️</p>
-  <p>May your life be filled with love, happiness and endless beautiful memories.</p>
-  <button class="main-btn" onclick="next()">Aage Chalo 💕</button>
+  <p>Aaj ka din sirf ek date nahi, balki ek bahut khoobsurat wajah hai celebrate karne ki. ❤️</p>
+  <p>Tumhari smile hamesha aise hi rahe aur tumhari life mein har taraf khushiyan ho.</p>
+  <h2>Keep Shining, Birthday Girl! ✨</h2>
+  <button class="main-btn" onclick="next()">Let's Begin 💗</button>
 </section>
 
-<!-- SLIDE 3: PHOTOS -->
+<!-- 3 TO 9 PHOTOS -->
 <section class="slide">
   <h1>📸 Beautiful Memories</h1>
-  <p>Har photo ke saath ek alag yaad judi hai...</p>
+  <p>Kuch tasveerein sirf photos nahi, khoobsurat yaadein hoti hain. 💕</p>
   <img class="photo" src="anshika1.jpg" alt="Memory 1"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika1.jpg photo yahan add karo</div>
-  <button class="main-btn" onclick="next()">Next Memory ❤️</button>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika1.jpg ko birthday folder mein add karo</div>
+  <button class="main-btn" onclick="next()">Next Memory 💖</button>
 </section>
 
 <section class="slide">
-  <h2>🌸 A Smile to Remember</h2>
+  <h2>🌷 A Beautiful Smile</h2>
   <img class="photo" src="anshika2.jpg" alt="Memory 2"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika2.jpg photo yahan add karo</div>
-  <p>Tumhari smile sach mein sab kuch special bana deti hai.</p>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika2.jpg add karo</div>
+  <p>Ek smile kabhi-kabhi poore din ko beautiful bana deti hai. 😊</p>
   <button class="main-btn" onclick="next()">Next ❤️</button>
 </section>
 
 <section class="slide">
-  <h2>✨ Little Moments, Big Memories</h2>
+  <h2>✨ Little Moments</h2>
   <img class="photo" src="anshika3.jpg" alt="Memory 3"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika3.jpg photo yahan add karo</div>
-  <p>Kuch moments hamesha dil ke kareeb rehte hain.</p>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika3.jpg add karo</div>
+  <p>Simple moments, beautiful memories.</p>
   <button class="main-btn" onclick="next()">Next ❤️</button>
 </section>
 
 <section class="slide">
-  <h2>💖 Always Special</h2>
+  <h2>💗 Always Special</h2>
   <img class="photo" src="anshika4.jpg" alt="Memory 4"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika4.jpg photo yahan add karo</div>
-  <p>Har yaad apne aap mein ek khoobsurat kahani hai.</p>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika4.jpg add karo</div>
+  <p>Kuch log apni presence se hi sab kuch special bana dete hain.</p>
   <button class="main-btn" onclick="next()">Next ❤️</button>
 </section>
 
 <section class="slide">
-  <h2>🌷 More Memories</h2>
+  <h2>🌸 Another Memory</h2>
   <img class="photo" src="anshika5.jpg" alt="Memory 5"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika5.jpg photo yahan add karo</div>
-  <p>Yeh moments hamesha yaad rahenge.</p>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika5.jpg add karo</div>
+  <p>Har yaad ke saath ek nayi smile judi rahe.</p>
   <button class="main-btn" onclick="next()">Next ❤️</button>
 </section>
 
 <section class="slide">
-  <h2>🥰 A Beautiful Journey</h2>
+  <h2>🥰 Moments to Remember</h2>
   <img class="photo" src="anshika6.jpg" alt="Memory 6"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika6.jpg photo yahan add karo</div>
-  <p>Har din ek nayi khushi lekar aaye.</p>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika6.jpg add karo</div>
+  <p>Memories jo hamesha dil ke paas rahengi.</p>
   <button class="main-btn" onclick="next()">Next ❤️</button>
 </section>
 
 <section class="slide">
-  <h2>🎀 One Last Memory</h2>
+  <h2>🎀 One More Memory</h2>
   <img class="photo" src="anshika7.jpg" alt="Memory 7"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-  <div class="photo-placeholder">anshika7.jpg photo yahan add karo</div>
-  <p>Keep smiling and keep shining, Anshika!</p>
+    onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="photo-placeholder">anshika7.jpg add karo</div>
+  <p>Keep smiling, keep shining! ✨</p>
   <button class="main-btn" onclick="next()">Aage Chalo 💕</button>
 </section>
 
 <!-- FRIENDSHIP -->
 <section class="slide">
   <h1>🤝 Our Friendship</h1>
-  <p>Hamari friendship bhi kitni alag hai...</p>
-  <p>Kabhi chhoti-chhoti baaton par ladai, kabhi ek dusre ko manana, aur kabhi bina kuch kahe sab samajh jaana.</p>
-  <p class="highlight">Yahi toh apni bonding ki speciality hai. ❤️</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <p>Kabhi hasi, kabhi ladai, kabhi manana aur kabhi bina kahe ek dusre ko samajh jaana...</p>
+  <p>Hamari dosti ki kahani mein har emotion ka apna place hai. ❤️</p>
+  <button class="main-btn" onclick="next()">Next 💗</button>
 </section>
 
 <section class="slide">
-  <h2>😤 Kabhi Ladai Bhi Hoti Hai</h2>
-  <p>Kabhi arguments, kabhi gussa, kabhi ek dusre ki baat na maanna...</p>
-  <p>Lekin iska matlab yeh nahi ki care kam ho jaati hai.</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <h2>😤 Kabhi Thodi Si Ladai</h2>
+  <p>Kabhi chhoti baat par gussa, kabhi arguments aur kabhi ek dusre ko ignore karna...</p>
+  <p>Lekin care aur respect kabhi kam nahi honi chahiye.</p>
+  <button class="main-btn" onclick="next()">Next 🥹</button>
 </section>
 
 <section class="slide">
-  <h2>🥺 Phir Ek Dusre Ko Mana Lena</h2>
-  <p>Thodi der baad sab normal kar lena, phir se hasna aur baatein karna.</p>
-  <p>Yeh chhoti-chhoti baatein hi friendship ko special banati hain.</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <h2>🫶 Phir Se Mana Lena</h2>
+  <p>Thodi der baad phir baatein, phir hasi aur phir wahi purani bonding.</p>
+  <p>Shayad isi ko kehte hain ek special connection.</p>
+  <button class="main-btn" onclick="next()">Next 💕</button>
 </section>
 
 <section class="slide">
-  <h2>💗 Bina Kahe Samajhna</h2>
-  <p>Kabhi silence mein bhi feelings samajh aa jaati hain.</p>
-  <p>Har baar words ki zaroorat nahi hoti. Kabhi-kabhi ek understanding hi kaafi hoti hai.</p>
-  <p class="highlight">Stay the same, Anshika!</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <h2>💜 Bina Kahe Samajhna</h2>
+  <p>Kabhi words ki zaroorat nahi hoti. Ek chhota sa message bhi bata deta hai ki saamne wala care karta hai.</p>
+  <p>Bas ye understanding hamesha bani rahe.</p>
+  <button class="main-btn" onclick="next()">Next ✨</button>
 </section>
 
-<!-- KBB WISH -->
+<!-- KBB -->
 <section class="slide">
   <h1>💌 KBB Ki Taraf Se</h1>
   <p>जन्मदिन की बहुत-बहुत शुभकामनाएँ, अंशिका! ❤️</p>
   <p>तुम्हारी ज़िंदगी खुशियों, प्यार और सफलता से भरी रहे।</p>
-  <p>तुम्हारे चेहरे की मुस्कान कभी कम न हो और तुम्हारे सारे सपने पूरे हों।</p>
-  <p class="highlight">ढेर सारा प्यार और शुभकामनाएँ — KBB 💗</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <p>तुम्हारे चेहरे की मुस्कान कभी कम न हो। तुम्हारे सारे सपने पूरे हों।</p>
+  <h2>ढेर सारा प्यार — KBB 💗</h2>
+  <button class="main-btn" onclick="next()">Next 🌷</button>
 </section>
 
 <!-- FAMILY -->
 <section class="slide">
   <h1>👨‍👩‍👧 Family Wishes</h1>
-  <p>तुम्हारे परिवार का प्यार और आशीर्वाद हमेशा तुम्हारे साथ बना रहे।</p>
-  <p>घर में हमेशा खुशियाँ, हँसी और प्यार बना रहे।</p>
-  <p>तुम अपने परिवार का नाम हमेशा रोशन करो। ❤️</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <p>तुम्हारे परिवार का प्यार और आशीर्वाद हमेशा तुम्हारे साथ रहे।</p>
+  <p>घर में खुशियाँ, हँसी और प्यार बना रहे।</p>
+  <p>तुम हमेशा अपने परिवार का नाम रोशन करो। ❤️</p>
+  <button class="main-btn" onclick="next()">Next 💖</button>
 </section>
 
 <!-- DUGU -->
 <section class="slide">
-  <h1>🐻 A Special Wish for Dugu</h1>
-  <p>Dugu ki taraf se bhi tumhe bahut saara pyaar aur birthday wishes!</p>
-  <p>Hamesha khush raho, haste raho aur apni cute si smile se sabka din banaati raho. 💕</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <h1>🐻 A Wish for Dugu</h1>
+  <p>Dugu ki taraf se bhi tumhe bahut saara pyaar aur birthday wishes! 🥰</p>
+  <p>Hamesha khush raho, haste raho aur apni cute si smile se sabka din banaati raho.</p>
+  <button class="main-btn" onclick="next()">Next 🎀</button>
 </section>
 
 <!-- QUIZ -->
 <section class="slide" id="quizSlide">
-  <h1>🎯 Birthday Quiz</h1>
-  <p>Chalo dekhte hain tum kitna sahi answer karti ho! 😄</p>
+  <h1>💞 A Little Heart Quiz</h1>
+  <p>Ye exam nahi hai... bas tumhare cute thoughts jaanne ka ek bahana hai. 🥹</p>
   <h2 id="quizQuestion"></h2>
   <div id="quizOptions"></div>
   <p id="quizFeedback"></p>
   <p id="quizProgress"></p>
-  <button class="main-btn" id="quizNext" onclick="nextQuestion()">Next Question</button>
-  <button class="main-btn" id="quizContinue" onclick="next()" style="display:none">Continue 💖</button>
+  <button class="main-btn" id="quizNext" onclick="nextQuestion()">Next Question 💗</button>
+  <button class="main-btn" id="quizContinue" onclick="next()" style="display:none">See More Surprise 🎁</button>
 </section>
 
 <!-- BALLOONS -->
 <section class="slide">
-  <h1>🎈 Pop the Balloons!</h1>
-  <p>Har balloon mein tumhare liye ek chhoti si wish chhupi hai.</p>
-
+  <h1>🎈 Five Wishes for You</h1>
+  <p>Har balloon ke andar ek chhoti si wish chhupi hai. Ek-ek karke tap karo! 💕</p>
   <div class="balloon-area">
     <button class="balloon" onclick="popBalloon(0)">🎈</button>
     <button class="balloon" onclick="popBalloon(1)">🎈</button>
@@ -460,9 +426,8 @@ footer {
     <button class="balloon" onclick="popBalloon(3)">🎈</button>
     <button class="balloon" onclick="popBalloon(4)">🎈</button>
   </div>
-
-  <p id="balloonWish">Kisi balloon ko tap karo! 💗</p>
-  <button class="main-btn" onclick="next()">Next</button>
+  <p id="balloonWish">Tap a balloon! 💜</p>
+  <button class="main-btn" onclick="next()">Next ❤️</button>
 </section>
 
 <!-- LETTER -->
@@ -470,32 +435,45 @@ footer {
   <h1>💌 A Little Letter</h1>
   <div class="letter">
     <h2>Dear Anshika,</h2>
-    <p>Bas itna kehna hai ki tumhari life ka har aane wala din aaj se bhi zyada khoobsurat ho.</p>
-    <p>Khud par bharosa rakhna, apne dreams ko follow karna aur kabhi apni smile khona mat.</p>
-    <p>Thank you for being you. Hamesha khush rehna!</p>
+    <p>Life mein kuch log aise milte hain jo dheere-dheere bahut special ban jaate hain.</p>
+    <p>Unke saath chhoti-chhoti baatein, hasi, nok-jhok aur simple moments bhi yaadgaar ban jaate hain.</p>
+    <p>Bas tum hamesha khush raho, apne dreams poore karo aur apni smile kabhi mat khona.</p>
     <p><b>With lots of love,</b><br>KBB ❤️</p>
   </div>
-  <button class="main-btn" onclick="next()">Last Surprise 🎁</button>
+  <button class="main-btn" onclick="next()">One Last Thought 💜</button>
 </section>
 
-<!-- FINAL -->
+<!-- SECOND LAST: INDIRECT FUTURE PARTNER MESSAGE -->
+<section class="slide" id="futureSlide">
+  <h1>🌙 Ek Chhota Sa Khayal...</h1>
+  <p>Kabhi socha hai...</p>
+  <p>Agar koi dosti itni khoobsurat ho ki usmein hasi ho, nok-jhok ho, care ho, trust ho aur ek dusre ko samajhne ka sukoon ho...</p>
+  <p>Toh kya pata waqt ke saath woh dosti ek aur khoobsurat naam paane lage? 💗</p>
+  <p>Jaise sirf aaj ki baatein nahi, balki kal ke plans bhi saath banane ka mann ho...</p>
+  <h2>Ek dost se zindagi ke safar ka humsafar banne tak... ✨</h2>
+  <p>Kabhi-kabhi sabse beautiful stories wahi hoti hain jo friendship se shuru hoti hain.</p>
+  <p class="highlight">Bas ek khayal hai... tumhare dil mein bhi kabhi aisa khayal aata hai? 🥹</p>
+  <button class="main-btn" onclick="next()">Aage Dekho ❤️</button>
+</section>
+
+<!-- LAST -->
 <section class="slide">
-  <h1>🎉 Once Again, Happy Birthday! 🎉</h1>
-  <h2>अंशिका ❤️</h2>
-  <p>तुम्हारा हर दिन खूबसूरत हो, हर ख्वाब पूरा हो और ज़िंदगी हमेशा मुस्कुराहटों से भरी रहे।</p>
-  <p class="highlight">Stay blessed. Stay happy. Keep shining! ✨</p>
-  <h2>With Love — KBB 💗</h2>
+  <h1>🎂 Happy Birthday, Anshika! 🎂</h1>
+  <h2>तुम हमेशा खुश रहो ❤️</h2>
+  <p>Tumhari life ka har naya din pichhle din se zyada beautiful ho.</p>
+  <p>Har sapna poora ho, har raasta roshan ho aur tumhe hamesha woh pyaar mile jo tum deserve karti ho. 💜</p>
+  <h1>With Love, KBB 💖</h1>
   <button class="main-btn" onclick="restart()">Replay Surprise 🔁</button>
 </section>
 
 </div>
 
-<footer>Made with ❤️ for Anshika | KBB</footer>
+<footer>Made with endless love ❤️ | KBB</footer>
 
 <script>
-/* =================================
-   MUSIC SYSTEM
-================================= */
+/* =====================================
+   MUSIC: PASSWORD CLICK + CORNER BUTTON
+===================================== */
 
 const music = document.getElementById("bgMusic");
 const musicButton = document.getElementById("musicButton");
@@ -503,242 +481,197 @@ const musicStatus = document.getElementById("musicStatus");
 
 let musicOn = false;
 
-function updateMusicButton() {
-  musicButton.textContent = musicOn ? "🔊 Music OFF" : "🎵 Music ON";
-  musicStatus.textContent = musicOn ? "Music: PLAYING" : "Music: OFF";
+function updateMusicUI(){
+  musicOn = !music.paused;
+  musicButton.textContent = musicOn ? "🔇 Music OFF" : "🎵 Music ON";
+  musicStatus.textContent = musicOn ? "Music: PLAYING ❤️" : "Music: OFF";
 }
 
-async function startMusic() {
-  try {
-    music.volume = 0.75;
+/* Call play() synchronously in the password submit gesture. */
+function startMusic(){
+  music.volume = 0.75;
 
-    // Play is called directly from the password submit event.
-    await music.play();
+  const playPromise = music.play();
 
-    musicOn = true;
-    updateMusicButton();
-  } catch (error) {
-    musicOn = false;
-    updateMusicButton();
-    console.warn("Music playback failed:", error);
-    musicStatus.textContent = "Tap Music ON to start";
+  if(playPromise !== undefined){
+    playPromise.then(()=>{
+      updateMusicUI();
+    }).catch((error)=>{
+      updateMusicUI();
+      musicStatus.textContent = "Tap Music ON to play";
+      console.error("Playback blocked or failed:",error);
+    });
   }
 }
 
-function stopMusic() {
-  music.pause();
-  musicOn = false;
-  updateMusicButton();
-}
-
-musicButton.addEventListener("click", function () {
-  if (music.paused) {
+function toggleMusic(){
+  if(music.paused){
     startMusic();
-  } else {
-    stopMusic();
+  }else{
+    music.pause();
+    updateMusicUI();
   }
+}
+
+musicButton.addEventListener("click",toggleMusic);
+
+music.addEventListener("play",updateMusicUI);
+music.addEventListener("pause",updateMusicUI);
+
+music.addEventListener("error",()=>{
+  musicStatus.textContent = "MP3 file not loading!";
+  console.error("Audio error. Check birthday.mp3 path and file.");
 });
 
-music.addEventListener("play", function () {
-  musicOn = true;
-  updateMusicButton();
+music.addEventListener("loadedmetadata",()=>{
+  console.log("Audio loaded. Duration:",music.duration);
 });
 
-music.addEventListener("pause", function () {
-  musicOn = false;
-  updateMusicButton();
-});
+updateMusicUI();
 
-music.addEventListener("error", function () {
-  musicStatus.textContent = "Audio file not found!";
-  console.error("Check birthday.mp3 file and its location.");
-});
-
-updateMusicButton();
-
-/* =================================
-   PASSWORD SYSTEM
-================================= */
+/* =====================================
+   PASSWORD
+===================================== */
 
 const correctPassword = "KBBKB2";
-const passwordForm = document.getElementById("passwordForm");
-const passwordInput = document.getElementById("passwordInput");
-const passwordError = document.getElementById("passwordError");
 
-passwordForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+document.getElementById("passwordForm").addEventListener("submit",function(e){
+  e.preventDefault();
 
-  if (passwordInput.value.trim() !== correctPassword) {
-    passwordError.textContent = "Wrong password! Dobara try karo ❤️";
+  const value = document.getElementById("passwordInput").value.trim();
+  const error = document.getElementById("passwordError");
+
+  if(value !== correctPassword){
+    error.textContent = "Password galat hai! Dobara try karo ❤️";
     return;
   }
 
-  passwordError.textContent = "";
+  error.textContent = "";
 
-  // IMPORTANT: Start music directly inside the user's submit action.
-  // Do not move this call to setTimeout or window.onload.
+  /* Important: Do not use setTimeout before this call. */
   startMusic();
 
   showSlide(1);
 });
 
-/* =================================
+/* =====================================
    SLIDE NAVIGATION
-================================= */
+===================================== */
 
 const slides = Array.from(document.querySelectorAll(".app .slide"));
 let currentSlide = 0;
 
-function showSlide(index) {
-  if (index < 0 || index >= slides.length) return;
+function showSlide(index){
+  if(index < 0 || index >= slides.length) return;
 
-  slides.forEach(function (slide) {
-    slide.classList.remove("active");
-  });
-
+  slides.forEach(s=>s.classList.remove("active"));
   currentSlide = index;
   slides[currentSlide].classList.add("active");
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({top:0,behavior:"smooth"});
+  heartBurst();
 }
 
-function next() {
-  showSlide(currentSlide + 1);
+function next(){
+  showSlide(currentSlide+1);
 }
 
-function prev() {
-  showSlide(currentSlide - 1);
-}
-
-function restart() {
+function restart(){
   showSlide(0);
-  passwordInput.value = "";
-  passwordError.textContent = "";
+  document.getElementById("passwordInput").value="";
+  document.getElementById("passwordError").textContent="";
 }
 
-/* =================================
-   QUIZ: 7 QUESTIONS
-================================= */
+/* =====================================
+   NEW PERSONAL-FEELING QUIZ
+===================================== */
 
 const questions = [
   {
-    q: "Birthday girl ka naam kya hai?",
-    options: ["Anshika", "Dugu", "KBB", "Koi aur"],
-    answer: 0
+    q:"Agar koi tumhara mood bina bataye samajh jaaye, toh tumhe kaisa lagega?",
+    o:["Bahut special 🥹","Cute sa surprise 😊","Thoda unbelievable 😄","Dil ko sukoon 💗"]
   },
   {
-    q: "Birthday kis month mein aata hai?",
-    options: ["January", "November", "March", "June"],
-    answer: 1
+    q:"Ek perfect memory kis cheez se banti hai?",
+    o:["Long conversations 🌙","Chhoti-chhoti hasi 😂","Ek dusre ki care 🫶","Saath bitaya hua waqt 💜"]
   },
   {
-    q: "Birthday date kya hai?",
-    options: ["25 November", "26 November", "27 November", "28 November"],
-    answer: 2
+    q:"Agar kisi se naraz ho, toh tumhe kya sabse achha lagta hai?",
+    o:["Pyaar se manana 💌","Honestly baat karna 🤝","Thoda time dena 🌸","Ek cute sa message 🥰"]
   },
   {
-    q: "KBB ki taraf se kya wish hai?",
-    options: ["Hamesha khush raho", "Sad raho", "Gussa karo", "Kuch nahi"],
-    answer: 0
+    q:"Tumhare liye trust ka sabse beautiful meaning kya hai?",
+    o:["Har baat share kar paana 💗","Bina dare apne jaisa rehna","Mushkil waqt mein saath","Bina kahe samajhna 🫂"]
   },
   {
-    q: "Friendship mein kya important hai?",
-    options: ["Ego", "Understanding", "Ignoring", "Ladai"],
-    answer: 1
+    q:"Agar ek din sirf apne favourite insaan ke saath ho, toh kya choose karogi?",
+    o:["Long drive 🚗","Coffee aur baatein ☕","Random adventures ✨","Shaant si evening 🌙"]
   },
   {
-    q: "Birthday par sabse zaroori kya hai?",
-    options: ["Khushi", "Tension", "Gussa", "Fights"],
-    answer: 0
+    q:"Tumhare hisaab se ek strong bond ki sabse khaas baat kya hai?",
+    o:["Friendship aur laughter 😂","Respect aur understanding 💜","Care aur loyalty 🫶","Har situation mein saath ❤️"]
   },
   {
-    q: "Aaj ka din kiske liye special hai?",
-    options: ["KBB", "Anshika", "Dugu", "Sabke liye"],
-    answer: 1
+    q:"Agar koi beautiful friendship waqt ke saath aur special ho jaaye, toh tum kya sochogi?",
+    o:["Kuch connections rare hote hain 💗","Waqt ko apni story likhne do 🌷","Dil ki baat samajhna zaroori hai 🥹","Beautiful possibilities ko chance milna chahiye ✨"]
   }
 ];
 
-let questionIndex = 0;
-let quizScore = 0;
-let selectedAnswer = null;
-let questionAnswered = false;
+let questionIndex=0;
+const answers=[];
 
-function loadQuestion() {
-  const question = questions[questionIndex];
+function loadQuestion(){
+  const q=questions[questionIndex];
 
   document.getElementById("quizQuestion").textContent =
-    (questionIndex + 1) + ". " + question.q;
+    (questionIndex+1)+". "+q.q;
 
-  document.getElementById("quizOptions").innerHTML = "";
-  document.getElementById("quizFeedback").textContent = "";
+  document.getElementById("quizOptions").innerHTML="";
+  document.getElementById("quizFeedback").textContent="";
   document.getElementById("quizProgress").textContent =
-    "Question " + (questionIndex + 1) + " of " + questions.length;
+    "Question "+(questionIndex+1)+" of "+questions.length;
 
-  selectedAnswer = null;
-  questionAnswered = false;
+  document.getElementById("quizNext").style.display="inline-block";
+  document.getElementById("quizContinue").style.display="none";
 
-  document.getElementById("quizNext").style.display = "inline-block";
-  document.getElementById("quizContinue").style.display = "none";
+  q.o.forEach((option,index)=>{
+    const btn=document.createElement("button");
+    btn.className="quiz-option";
+    btn.textContent=option;
 
-  question.options.forEach(function (option, index) {
-    const button = document.createElement("button");
-    button.className = "quiz-option";
-    button.textContent = option;
+    btn.addEventListener("click",()=>{
+      if(answers[questionIndex] !== undefined) return;
 
-    button.addEventListener("click", function () {
-      if (questionAnswered) return;
-
-      selectedAnswer = index;
-
-      document.querySelectorAll(".quiz-option").forEach(function (item) {
-        item.classList.remove("selected");
+      answers[questionIndex]=index;
+      document.querySelectorAll(".quiz-option").forEach(b=>{
+        b.disabled=true;
+        b.classList.remove("selected");
       });
+      btn.classList.add("selected");
 
-      button.classList.add("selected");
-      checkAnswer();
+      document.getElementById("quizFeedback").textContent =
+        "Aww! Tumhara answer bahut sweet hai! 💗";
+
+      if(questionIndex===questions.length-1){
+        document.getElementById("quizNext").style.display="none";
+        document.getElementById("quizContinue").style.display="inline-block";
+        document.getElementById("quizFeedback").textContent =
+          "Quiz complete! Tumhare thoughts bahut beautiful hain. 🥹❤️";
+      }
     });
 
-    document.getElementById("quizOptions").appendChild(button);
+    document.getElementById("quizOptions").appendChild(btn);
   });
 }
 
-function checkAnswer() {
-  if (selectedAnswer === null || questionAnswered) return;
-
-  questionAnswered = true;
-
-  const question = questions[questionIndex];
-  const buttons = document.querySelectorAll(".quiz-option");
-
-  if (selectedAnswer === question.answer) {
-    quizScore++;
+function nextQuestion(){
+  if(answers[questionIndex] === undefined){
     document.getElementById("quizFeedback").textContent =
-      "Correct answer! 🎉";
-  } else {
-    document.getElementById("quizFeedback").textContent =
-      "Koi baat nahi! ❤️";
-  }
-
-  buttons.forEach(function (button) {
-    button.disabled = true;
-  });
-
-  if (questionIndex === questions.length - 1) {
-    document.getElementById("quizNext").style.display = "none";
-    document.getElementById("quizContinue").style.display = "inline-block";
-    document.getElementById("quizFeedback").textContent +=
-      " Quiz complete! Score: " + quizScore + "/" + questions.length;
-  }
-}
-
-function nextQuestion() {
-  if (!questionAnswered) {
-    document.getElementById("quizFeedback").textContent =
-      "Pehle ek answer select karo! 💗";
+      "Pehle apna answer choose karo! 💕";
     return;
   }
 
-  if (questionIndex < questions.length - 1) {
+  if(questionIndex < questions.length-1){
     questionIndex++;
     loadQuestion();
   }
@@ -746,36 +679,76 @@ function nextQuestion() {
 
 loadQuestion();
 
-/* =================================
-   FIVE CLICKABLE BALLOONS
-================================= */
+/* =====================================
+   BALLOON WISHES
+===================================== */
 
-const balloonWishes = [
-  "Tumhari life hamesha khushiyon se bhari rahe! ❤️",
+const wishes=[
+  "Tumhari life khushiyon se bhari rahe! ❤️",
   "Tumhare saare dreams poore hon! ✨",
   "Tumhari smile kabhi kam na ho! 😊",
-  "Har din tumhare liye special ho! 🌸",
-  "Dher saara pyaar aur birthday wishes! 💗"
+  "Tumhe har mod par success mile! 🌸",
+  "Tumhe hamesha sachcha pyaar aur care mile! 💗"
 ];
 
-const poppedBalloons = new Set();
+const popped=new Set();
 
-function popBalloon(index) {
-  if (poppedBalloons.has(index)) return;
+function popBalloon(index){
+  if(popped.has(index)) return;
+  popped.add(index);
 
-  poppedBalloons.add(index);
+  document.getElementById("balloonWish").textContent=wishes[index];
 
-  document.getElementById("balloonWish").textContent =
-    balloonWishes[index];
+  const all=document.querySelectorAll(".balloon");
+  all[index].textContent="💖";
+  all[index].disabled=true;
+  all[index].style.opacity=".5";
 
-  const balloons = document.querySelectorAll(".balloon");
-  balloons[index].textContent = "💖";
-  balloons[index].style.opacity = "0.55";
-  balloons[index].disabled = true;
+  heartBurst();
 
-  if (poppedBalloons.size === 5) {
+  if(popped.size===5){
     document.getElementById("balloonWish").textContent +=
       " All five wishes are yours! 🎉";
+  }
+}
+
+/* =====================================
+   HEART SHOWER
+===================================== */
+
+const heartSymbols=["💗","💖","💕","💜","❤️","💘","✨"];
+
+function makeHeart(){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.textContent=heartSymbols[
+    Math.floor(Math.random()*heartSymbols.length)
+  ];
+
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(14+Math.random()*22)+"px";
+  heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),9500);
+}
+
+/* Light continuous shower */
+setInterval(makeHeart,450);
+
+function heartBurst(){
+  for(let i=0;i<18;i++){
+    const h=document.createElement("div");
+    h.className="heart-burst";
+    h.textContent=heartSymbols[
+      Math.floor(Math.random()*heartSymbols.length)
+    ];
+    h.style.left="50%";
+    h.style.top="50%";
+    h.style.setProperty("--x",(Math.random()*400-200)+"px");
+    h.style.setProperty("--y",(Math.random()*400-200)+"px");
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1600);
   }
 }
 </script>
