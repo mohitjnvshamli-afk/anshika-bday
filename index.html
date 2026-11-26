@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Anshika ❤️</title>
+<style>
+:root{--pink:#ff70b7;--gold:#ffe5a3;--violet:#a978ff;--ink:#170b2c}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Georgia,"Noto Serif Devanagari",serif;
+background:radial-gradient(circle at 15% 15%,#63306f 0,transparent 32%),
+radial-gradient(circle at 85% 80%,#8b285f 0,transparent 30%),
+linear-gradient(135deg,#100b2d,#261044 48%,#501544);
+color:#fff;text-align:center;min-height:100vh;overflow-x:hidden
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;
+background-image:radial-gradient(#fff 1px,transparent 1px);background-size:34px 34px}
+.slide{
+display:none;min-height:100vh;padding:90px 20px 48px;justify-content:center;
+align-items:center;flex-direction:column;gap:20px;animation:fade .8s ease;
+position:relative;z-index:1
+}
+.slide.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+h1{color:#ffe0f1;text-shadow:0 0 12px #ff69b4,0 0 28px #a978ff;font-size:clamp(28px,5vw,44px)}
+h2{color:var(--gold);text-shadow:0 0 12px #ffb6dc}
+p{font-size:18px;line-height:1.75;max-width:740px}
+input{padding:14px 18px;border-radius:28px;border:2px solid #ffc5e5;
+font-size:17px;text-align:center;width:min(270px,85vw);outline:none}
+button{
+border:1px solid #ffd5ed;border-radius:30px;padding:14px 27px;font-size:16px;
+cursor:pointer;background:linear-gradient(110deg,#ff5fae,#a46aff 58%,#6c8cff);
+color:white;font-weight:bold;box-shadow:0 5px 24px #ff70b766,0 0 15px #a978ff55;
+transition:transform .25s,filter .25s
+}
+button:hover{transform:translateY(-3px) scale(1.04);filter:brightness(1.12)}
+button:active{transform:scale(.97)}
+.main-btn{margin-top:12px}
+.photo{width:min(85vw,420px);height:330px;object-fit:contain;border-radius:24px;
+background:#211333;border:3px solid #ffc5e5;box-shadow:0 0 30px #e76bb588}
+.letter{max-width:780px;padding:28px;border:1px solid #ffc5e5;border-radius:24px;
+background:linear-gradient(135deg,#ffffff18,#ffffff08);line-height:1.9;
+box-shadow:0 0 30px #d45ba055;backdrop-filter:blur(8px)}
+.letter p{margin:13px auto}
+#musicButton{position:fixed;right:15px;top:15px;z-index:10010;padding:10px 17px}
+#musicStatus{position:fixed;top:61px;right:15px;z-index:10010;font-size:12px;color:#ffe0f1;
+background:#170b2ccc;padding:5px 10px;border-radius:20px}
+.heart{position:fixed;top:-30px;z-index:9999;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.balloon{display:inline-flex;align-items:center;justify-content:center;width:85px;height:105px;
+border-radius:50%;background:linear-gradient(135deg,#ff8ac7,#a46aff);
+margin:12px;cursor:pointer;font-size:35px;box-shadow:0 0 20px #ff8ac7;
+animation:float 2s infinite alternate}
+@keyframes float{to{transform:translateY(-12px)}}
+#balloonWish{min-height:55px}
+.quiz-question{background:linear-gradient(135deg,#ffffff1c,#ffffff09);padding:20px;
+border:1px solid #ffffff25;border-radius:20px;max-width:650px;width:100%;
+box-shadow:0 8px 25px #09001433}
+.quiz-question label{display:block;margin:12px;cursor:pointer}
+.quiz-question input{width:auto;accent-color:#ff70b7}
+.firework{position:fixed;width:9px;height:9px;border-radius:50%;z-index:10005;
+pointer-events:none;box-shadow:0 0 12px currentColor,0 0 25px currentColor;
+animation:fireworkBurst 1.5s ease-out forwards}
+@keyframes fireworkBurst{0%{transform:translate(0,0) scale(1);opacity:1}
+100%{transform:translate(var(--fx),var(--fy)) scale(.1);opacity:0}}
+.celebration-flash{position:fixed;inset:0;background:#fff;z-index:10004;
+pointer-events:none;animation:flashEffect .35s ease-out forwards}
+@keyframes flashEffect{0%{opacity:.55}100%{opacity:0}}
+.side-sticker{position:fixed;z-index:10006;pointer-events:none;
+font-size:clamp(25px,4vw,48px);top:var(--top);
+animation:stickerFly 2.2s cubic-bezier(.12,.7,.2,1) forwards;
+filter:drop-shadow(0 0 10px #fff8)}
+.side-sticker.left{left:-70px;--travel:calc(100vw + 140px)}
+.side-sticker.right{right:-70px;--travel:calc(-100vw - 140px)}
+@keyframes stickerFly{
+0%{transform:translateX(0) rotate(0) scale(.5);opacity:0}
+12%{opacity:1;transform:translateX(calc(var(--travel)*.12)) rotate(35deg) scale(1.15)}
+85%{opacity:1}
+100%{transform:translateX(var(--travel)) rotate(540deg) scale(.75);opacity:0}
+}
+@media(max-width:600px){
+.slide{padding-top:105px}.photo{height:260px}
+.letter{padding:20px}.quiz-question{text-align:left}
+#musicStatus{top:57px}
+}
+</style>
+</head>
+<body>
 
+<audio id="birthdayMusic" preload="auto" playsinline>
+<source src="./bdaysong.mp3" type="audio/mpeg">
+</audio>
+<audio id="romanticMusic" loop preload="auto" playsinline>
+<source src="./romantic.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" type="button">🎵 Music ON</button>
+<div id="musicStatus">Music: OFF</div>
+
+<section class="slide active">
+<h1>🔐 A Special Surprise Awaits...</h1>
+<p>एक छोटा सा सरप्राइज़ है तुम्हारे लिए, Anshika! ❤️</p>
+<input id="password" type="password" placeholder="Enter Secret Password">
+<button onclick="unlock()">Unlock My Surprise 💖</button>
+<p id="error"></p>
+</section>
+
+<section class="slide">
+<h1>🎉 Happy Birthday Anshika! 🎂</h1>
+<h2>आज का दिन सिर्फ तुम्हारे नाम ❤️</h2>
+<p>Kuch log life mein aate hain aur dheere-dheere life ka beautiful part ban jaate hain...</p>
+<p>Aaj tumhare liye kuch special memories aur kuch dil ki baatein. 🥹</p>
+<button class="main-btn" onclick="next()">Let's Begin 💝</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 1</h1>
+<img class="photo" src="anshika1.jpg" alt="Memory 1">
+<p>कुछ तस्वीरें सिर्फ photos नहीं होतीं, वो एक खूबसूरत याद होती हैं। ❤️</p>
+<button onclick="next()">Next Memory 💗</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 2</h1>
+<img class="photo" src="anshika2.jpg" alt="Memory 2">
+<p>Yeh pal shayad chhota ho, lekin yaad hamesha special rahegi. ✨</p>
+<button onclick="next()">Next Memory 💗</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 3</h1>
+<img class="photo" src="anshika3.jpg" alt="Memory 3">
+<p>Har memory ke saath ek alag hi smile judi hai. 😊</p>
+<button onclick="next()">Next Memory 💗</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 4</h1>
+<img class="photo" src="anshika4.jpg" alt="Memory 4">
+<p>Kuch moments ko dobara jeene ka mann karta hai. 💕</p>
+<button onclick="next()">Next Memory 💗</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 5</h1>
+<img class="photo" src="anshika5.jpg" alt="Memory 5">
+<p>In yaadon ki apni hi ek kahani hai. 🌸</p>
+<button onclick="next()">Next Memory 💗</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 6</h1>
+<img class="photo" src="anshika6.jpg" alt="Memory 6">
+<p>Bas aise hi haste rehna, kyunki tumhari smile bahut precious hai. ❤️</p>
+<button onclick="next()">Next Memory 💗</button>
+</section>
+
+<section class="slide">
+<h1>📸 Memory 7</h1>
+<img class="photo" src="anshika7.jpg" alt="Memory 7">
+<p>Yeh memories hamesha dil ke kareeb rahengi. 🥹</p>
+<button onclick="next()">Aage Chalein 💝</button>
+</section>
