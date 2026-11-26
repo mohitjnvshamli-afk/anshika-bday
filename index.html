@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -6,148 +7,267 @@
 <title>Happy Birthday Anshika ❤️</title>
 
 <style>
-:root{--pink:#ff70b7;--gold:#ffe5a3;--violet:#a978ff;--ink:#170b2c}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --pink:#ff5fae;
+  --gold:#ffe4a6;
+  --purple:#a978ff;
+}
 body{
+  min-height:100vh;
+  color:white;
+  text-align:center;
   font-family:Georgia,"Noto Serif Devanagari",serif;
-  background:radial-gradient(circle at 15% 15%,#63306f 0,transparent 32%),
-             radial-gradient(circle at 85% 80%,#8b285f 0,transparent 30%),
-             linear-gradient(135deg,#100b2d,#261044 48%,#501544);
-  color:#fff;text-align:center;min-height:100vh;overflow-x:hidden
+  background:
+  radial-gradient(circle at 15% 15%,#76335f,transparent 35%),
+  radial-gradient(circle at 85% 80%,#63348b,transparent 35%),
+  linear-gradient(135deg,#10091f,#291039,#4c1646);
+  overflow-x:hidden;
 }
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;
-  background-image:radial-gradient(#fff 1px,transparent 1px);background-size:34px 34px}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.2;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:35px 35px;
+}
 .slide{
-  display:none;min-height:100vh;padding:90px 20px 48px;justify-content:center;
-  align-items:center;flex-direction:column;gap:20px;animation:fade .8s ease;
-  position:relative;z-index:1
+  display:none;
+  min-height:100vh;
+  padding:100px 20px 45px;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap:19px;
+  position:relative;
+  z-index:1;
 }
-.slide.active{display:flex}
-@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-h1{color:#ffe0f1;text-shadow:0 0 12px #ff69b4,0 0 28px #a978ff;font-size:clamp(28px,5vw,44px)}
-h2{color:var(--gold);text-shadow:0 0 12px #ffb6dc}
-p{font-size:18px;line-height:1.75;max-width:740px}
-input{
-  padding:14px 18px;border-radius:28px;border:2px solid #ffc5e5;
-  font-size:17px;text-align:center;width:min(270px,85vw);outline:none
+.slide.active{
+  display:flex;
+  animation:fade .6s ease;
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+h1{
+  font-size:clamp(28px,5vw,45px);
+  color:#ffe1f0;
+  text-shadow:0 0 15px #ff5fae,0 0 30px #a978ff;
+}
+h2{
+  color:var(--gold);
+  text-shadow:0 0 12px #ffb4d7;
+}
+p{
+  max-width:750px;
+  font-size:18px;
+  line-height:1.8;
 }
 button{
-  border:1px solid #ffd5ed;border-radius:30px;padding:14px 27px;font-size:16px;
-  cursor:pointer;background:linear-gradient(110deg,#ff5fae,#a46aff 58%,#6c8cff);
-  color:white;font-weight:bold;box-shadow:0 5px 24px #ff70b766,0 0 15px #a978ff55;
-  transition:transform .25s,filter .25s
+  border:1px solid #ffd5ed;
+  border-radius:35px;
+  padding:14px 26px;
+  font-size:16px;
+  font-weight:bold;
+  color:white;
+  background:linear-gradient(110deg,#ff4fa5,#a45fff,#697dff);
+  box-shadow:0 5px 24px #ff70b766;
+  cursor:pointer;
+  transition:.25s;
 }
-button:hover{transform:translateY(-3px) scale(1.04);filter:brightness(1.12)}
-button:active{transform:scale(.97)}
-.main-btn{margin-top:12px}
+button:hover{transform:translateY(-3px) scale(1.04)}
+input[type=password]{
+  padding:15px;
+  border:2px solid #ffc5e5;
+  border-radius:30px;
+  text-align:center;
+  font-size:17px;
+  width:min(280px,90%);
+  outline:none;
+}
 .photo{
-  width:min(85vw,420px);height:330px;object-fit:contain;border-radius:24px;
-  background:#211333;border:3px solid #ffc5e5;box-shadow:0 0 30px #e76bb588
+  width:min(88vw,420px);
+  height:330px;
+  object-fit:contain;
+  border:3px solid #ffc5e5;
+  border-radius:22px;
+  background:#211333;
+  box-shadow:0 0 30px #e76bb588;
 }
 .letter{
-  max-width:780px;padding:28px;border:1px solid #ffc5e5;border-radius:24px;
-  background:linear-gradient(135deg,#ffffff18,#ffffff08);line-height:1.9;
-  box-shadow:0 0 30px #d45ba055;backdrop-filter:blur(8px)
+  max-width:780px;
+  padding:25px;
+  border:1px solid #ffc5e5;
+  border-radius:24px;
+  background:#ffffff12;
+  box-shadow:0 0 30px #d45ba055;
+  line-height:1.9;
 }
-.letter p{margin:13px auto}
-#musicButton{position:fixed;right:15px;top:15px;z-index:10010;padding:10px 17px}
-#musicStatus{position:fixed;top:61px;right:15px;z-index:10010;font-size:12px;color:#ffe0f1;
-  background:#170b2ccc;padding:5px 10px;border-radius:20px}
-.heart{position:fixed;top:-30px;z-index:9999;pointer-events:none;animation:fall linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+.letter p{margin:12px auto}
+#musicButton{
+  position:fixed;
+  top:12px;
+  right:12px;
+  z-index:10000;
+  padding:10px 16px;
+}
+#musicStatus{
+  position:fixed;
+  right:12px;
+  top:59px;
+  z-index:10000;
+  background:#170b2cdd;
+  border-radius:20px;
+  padding:6px 10px;
+  font-size:12px;
+  color:#ffe0f1;
+}
+#error{color:#ffb5d7}
+.heart{
+  position:fixed;
+  top:-30px;
+  z-index:9999;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
 .balloon{
-  display:inline-flex;align-items:center;justify-content:center;width:85px;height:105px;
-  border-radius:50%;background:linear-gradient(135deg,#ff8ac7,#a46aff);
-  margin:12px;cursor:pointer;font-size:35px;box-shadow:0 0 20px #ff8ac7;
-  animation:float 2s infinite alternate
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:75px;
+  height:95px;
+  margin:9px;
+  font-size:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff8ac7,#a46aff);
+  box-shadow:0 0 20px #ff8ac7;
+  cursor:pointer;
+  animation:float 2s infinite alternate;
 }
 @keyframes float{to{transform:translateY(-12px)}}
-#balloonWish{min-height:55px}
 .quiz-question{
-  background:linear-gradient(135deg,#ffffff1c,#ffffff09);padding:20px;
-  border:1px solid #ffffff25;border-radius:20px;max-width:650px;width:100%;
-  box-shadow:0 8px 25px #09001433
+  width:min(650px,100%);
+  padding:19px;
+  border:1px solid #ffffff35;
+  border-radius:20px;
+  background:#ffffff12;
+  text-align:left;
 }
-.quiz-question label{display:block;margin:12px;cursor:pointer}
-.quiz-question input{width:auto;accent-color:#ff70b7}
+.quiz-question p{margin-bottom:10px}
+.quiz-question label{
+  display:block;
+  margin:12px 0;
+  cursor:pointer;
+  line-height:1.5;
+}
+.quiz-question input{accent-color:#ff70b7}
 .firework{
-  position:fixed;width:9px;height:9px;border-radius:50%;z-index:10005;
-  pointer-events:none;box-shadow:0 0 12px currentColor,0 0 25px currentColor;
-  animation:fireworkBurst 1.5s ease-out forwards
+  position:fixed;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  z-index:10005;
+  pointer-events:none;
+  box-shadow:0 0 12px currentColor,0 0 25px currentColor;
+  animation:burst 1.5s ease-out forwards;
 }
-@keyframes fireworkBurst{0%{transform:translate(0,0) scale(1);opacity:1}
-  100%{transform:translate(var(--fx),var(--fy)) scale(.1);opacity:0}}
-.celebration-flash{position:fixed;inset:0;background:#fff;z-index:10004;
-  pointer-events:none;animation:flashEffect .35s ease-out forwards}
-@keyframes flashEffect{0%{opacity:.55}100%{opacity:0}}
+@keyframes burst{
+  to{
+    transform:translate(var(--x),var(--y)) scale(.1);
+    opacity:0;
+  }
+}
 .side-sticker{
-  position:fixed;z-index:10006;pointer-events:none;font-size:clamp(25px,4vw,48px);
-  top:var(--top);animation:stickerFly 2.2s cubic-bezier(.12,.7,.2,1) forwards;
-  filter:drop-shadow(0 0 10px #fff8)
+  position:fixed;
+  top:var(--top);
+  z-index:10006;
+  pointer-events:none;
+  font-size:38px;
+  filter:drop-shadow(0 0 10px white);
+  animation:fly 2.5s ease-in-out forwards;
 }
-.side-sticker.left{left:-70px;--travel:calc(100vw + 140px)}
-.side-sticker.right{right:-70px;--travel:calc(-100vw - 140px)}
-@keyframes stickerFly{
+.side-sticker.left{left:-70px}
+.side-sticker.right{right:-70px}
+@keyframes fly{
   0%{transform:translateX(0) rotate(0) scale(.5);opacity:0}
-  12%{opacity:1;transform:translateX(calc(var(--travel)*.12)) rotate(35deg) scale(1.15)}
-  85%{opacity:1}
-  100%{transform:translateX(var(--travel)) rotate(540deg) scale(.75);opacity:0}
+  15%{opacity:1;transform:translateX(var(--move)) rotate(60deg) scale(1.2)}
+  100%{transform:translateX(var(--move)) rotate(500deg);opacity:0}
 }
+.flash{
+  position:fixed;
+  inset:0;
+  z-index:10004;
+  background:white;
+  pointer-events:none;
+  animation:flash .4s forwards;
+}
+@keyframes flash{to{opacity:0}}
 @media(max-width:600px){
-  .slide{padding-top:105px}.photo{height:260px}
-  .letter{padding:20px}.quiz-question{text-align:left}
-  #musicStatus{top:57px}
+  .photo{height:260px}
+  .letter{padding:18px}
+  .slide{padding-top:115px}
+  .balloon{width:62px;height:78px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC FILES -->
-<audio id="birthdayMusic" src="./bdaysong.mp3" preload="auto" playsinline></audio>
-<audio id="romanticMusic" src="./romantic.mp3" preload="auto" playsinline loop></audio>
+<!-- AUDIO -->
+<audio id="birthdayMusic" preload="auto">
+  <source src="./bdaysong.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="romanticMusic" preload="auto" loop>
+  <source src="./romantic.mp3" type="audio/mpeg">
+</audio>
 
 <button id="musicButton" type="button">🎵 Music ON</button>
-<div id="musicStatus">Music: OFF</div>
+<div id="musicStatus">Music OFF</div>
 
-<!-- PASSWORD -->
+<!-- 1 PASSWORD -->
 <section class="slide active">
-  <h1>🔐 A Special Surprise Awaits...</h1>
-  <p>एक छोटा सा सरप्राइज़ है तुम्हारे लिए, Anshika! ❤️</p>
+  <h1>🔐 A Special Surprise Awaits</h1>
+  <p>Anshika, तुम्हारे लिए एक छोटा सा surprise है! ❤️</p>
   <input id="password" type="password" placeholder="Enter Secret Password">
-  <button onclick="unlock()">Unlock My Surprise 💖</button>
+  <button type="button" id="unlockButton">Unlock My Surprise 💖</button>
   <p id="error"></p>
 </section>
 
-<!-- WELCOME -->
+<!-- 2 WELCOME -->
 <section class="slide">
-  <h1>🎉 Happy Birthday Anshika! 🎂</h1>
+  <h1>🎂 Happy Birthday Anshika! 🎉</h1>
   <h2>आज का दिन सिर्फ तुम्हारे नाम ❤️</h2>
-  <p>Kuch log life mein aate hain aur dheere-dheere life ka beautiful part ban jaate hain...</p>
-  <p>Aaj tumhare liye kuch special memories aur kuch dil ki baatein. 🥹</p>
-  <button class="main-btn" onclick="next()">Let's Begin 💝</button>
+  <p>Kuch log life mein aate hain aur dheere-dheere life ka sabse beautiful part ban jaate hain.</p>
+  <p>Aaj tumhare liye kuch memories aur kuch dil ki baatein. 🥹</p>
+  <button onclick="next()">Let's Begin 💝</button>
 </section>
 
-<!-- PHOTO SLIDES -->
+<!-- 3-9 PHOTOS -->
 <section class="slide">
   <h1>📸 Memory 1</h1>
   <img class="photo" src="./anshika1.jpg" alt="Memory 1">
-  <p>कुछ तस्वीरें सिर्फ photos नहीं होतीं, वो एक खूबसूरत याद होती हैं। ❤️</p>
+  <p>कुछ तस्वीरें सिर्फ photos नहीं होतीं, वो खूबसूरत यादें होती हैं। ❤️</p>
   <button onclick="next()">Next Memory 💗</button>
 </section>
 
 <section class="slide">
   <h1>📸 Memory 2</h1>
   <img class="photo" src="./anshika2.jpg" alt="Memory 2">
-  <p>Yeh pal shayad chhota ho, lekin yaad hamesha special rahegi. ✨</p>
+  <p>Yeh pal hamesha yaad rahenge. ✨</p>
   <button onclick="next()">Next Memory 💗</button>
 </section>
 
 <section class="slide">
   <h1>📸 Memory 3</h1>
   <img class="photo" src="./anshika3.jpg" alt="Memory 3">
-  <p>Har memory ke saath ek alag hi smile judi hai. 😊</p>
+  <p>Har memory ke saath ek alag smile judi hai. 😊</p>
   <button onclick="next()">Next Memory 💗</button>
 </section>
 
@@ -161,14 +281,14 @@ button:active{transform:scale(.97)}
 <section class="slide">
   <h1>📸 Memory 5</h1>
   <img class="photo" src="./anshika5.jpg" alt="Memory 5">
-  <p>In yaadon ki apni hi ek kahani hai. 🌸</p>
+  <p>In yaadon ki apni hi kahani hai. 🌸</p>
   <button onclick="next()">Next Memory 💗</button>
 </section>
 
 <section class="slide">
   <h1>📸 Memory 6</h1>
   <img class="photo" src="./anshika6.jpg" alt="Memory 6">
-  <p>Bas aise hi haste rehna, kyunki tumhari smile bahut precious hai. ❤️</p>
+  <p>Bas aise hi haste rehna. Tumhari smile precious hai. ❤️</p>
   <button onclick="next()">Next Memory 💗</button>
 </section>
 
@@ -179,33 +299,34 @@ button:active{transform:scale(.97)}
   <button onclick="next()">Aage Chalein 💝</button>
 </section>
 
-<!-- FRIENDSHIP -->
+<!-- 10 FRIENDSHIP -->
 <section class="slide">
   <h1>🤝 Hamari Dosti</h1>
-  <p>Kabhi hasi, kabhi nok-jhok...</p>
-  <p>Kabhi ek dusre ko manana, kabhi bina kahe ek dusre ko samajhna.</p>
+  <p>Kabhi hasi, kabhi nok-jhok, kabhi ek dusre ko manana...</p>
   <p>Shayad isi ka naam ek beautiful bond hai. ❤️</p>
-  <button onclick="next()">Aur Bhi Hai... 🌷</button>
+  <button onclick="next()">Next 🌷</button>
 </section>
 
+<!-- 11 CONNECTION -->
 <section class="slide">
   <h1>💜 Ek Special Connection</h1>
   <p>Har kisi ke saath itni freely baat nahi hoti.</p>
   <p>Kuch logon ke saamne hum bina soche apni har baat keh dete hain.</p>
   <p>Aur tum unhi special logon mein se ho. ✨</p>
-  <button onclick="next()">Next Surprise 🎁</button>
+  <button onclick="next()">Next 🎁</button>
 </section>
 
-<!-- WISH -->
+<!-- 12 WISHES -->
 <section class="slide">
   <h1>🎂 Dil Se Birthday Wishes</h1>
   <p>भगवान तुम्हारी ज़िंदगी को खुशियों से भर दे।</p>
   <p>तुम्हारे हर सपने को एक खूबसूरत मंज़िल मिले।</p>
-  <p>Har mushkil aasaan ho aur har din tumhare chehre par smile laaye. ❤️</p>
-  <h2>Stay Blessed, Stay Happy! 🌸</h2>
+  <p>Har din tumhare chehre par smile laaye. ❤️</p>
+  <h2>Stay Blessed! 🌸</h2>
   <button onclick="next()">Next 💖</button>
 </section>
 
+<!-- 13 FAMILY -->
 <section class="slide">
   <h1>👨‍👩‍👧 Family Ke Liye Wishes</h1>
   <p>Tumhare parivaar mein hamesha pyaar, sehat aur sukoon bana rahe.</p>
@@ -213,63 +334,64 @@ button:active{transform:scale(.97)}
   <button onclick="next()">Next 💝</button>
 </section>
 
+<!-- 14 DUGU -->
 <section class="slide">
   <h1>🥹 Dugu Ki Taraf Se</h1>
   <p>Hamesha aise hi muskurati rehna.</p>
-  <p>Life mein jitni khushiyan tum soch sakti ho, usse bhi zyada tumhe milein.</p>
+  <p>Life mein tumhe woh saari khushiyan milein jo tum deserve karti ho.</p>
   <h2>Lots of Love! 💗</h2>
   <button onclick="next()">Quiz Time 🎯</button>
 </section>
 
-<!-- QUIZ -->
+<!-- 15 QUIZ -->
 <section class="slide">
   <h1>💞 A Little Birthday Quiz</h1>
-  <p>Har question ka answer apne dil se dena. Koi right ya wrong answer nahi hai. ❤️</p>
+  <p>Har question ka answer apne dil se dena. ❤️</p>
 
   <div class="quiz-question">
-    <p>1. Jab tumhara mood off hota hai, tumhe sabse zyada kya chahiye?</p>
+    <p>1. Jab tumhara mood off hota hai, tumhe kya chahiye?</p>
     <label><input type="radio" name="q1"> Koi jo bina pooche samajh jaaye</label>
-    <label><input type="radio" name="q1"> Thoda sa time aur space</label>
+    <label><input type="radio" name="q1"> Thoda time aur space</label>
     <label><input type="radio" name="q1"> Ek funny conversation</label>
   </div>
 
   <div class="quiz-question">
-    <p>2. Hamari dosti ki sabse achhi baat kya hai?</p>
+    <p>2. Hamari dosti ki sabse achhi baat?</p>
     <label><input type="radio" name="q2"> Bina filter ke baatein</label>
     <label><input type="radio" name="q2"> Nok-jhok aur manana</label>
     <label><input type="radio" name="q2"> Ek dusre ka saath</label>
   </div>
 
   <div class="quiz-question">
-    <p>3. Agar kabhi humari baat na ho, toh kya miss hoga?</p>
+    <p>3. Agar kabhi humari baat na ho toh kya miss hoga?</p>
     <label><input type="radio" name="q3"> Random conversations</label>
     <label><input type="radio" name="q3"> Woh hasi-mazaak</label>
-    <label><input type="radio" name="q3"> Ek familiar sa connection</label>
+    <label><input type="radio" name="q3"> Ek familiar connection</label>
   </div>
 
   <div class="quiz-question">
-    <p>4. Tumhare liye trust ka matlab kya hai?</p>
+    <p>4. Tumhare liye trust ka matlab?</p>
     <label><input type="radio" name="q4"> Har situation mein saath</label>
-    <label><input type="radio" name="q4"> Bina dare apni baat keh paana</label>
+    <label><input type="radio" name="q4"> Bina dare apni baat kehna</label>
     <label><input type="radio" name="q4"> Ek dusre ko samajhna</label>
   </div>
 
   <div class="quiz-question">
-    <p>5. Agar ek din sirf apni favourite memories ko jee sako, toh?</p>
+    <p>5. Favourite memories ko dobara jeene ka mauka mile toh?</p>
     <label><input type="radio" name="q5"> Hasi-mazaak wala din</label>
-    <label><input type="radio" name="q5"> Long conversations wala din</label>
-    <label><input type="radio" name="q5"> Koi unexpected special moment</label>
+    <label><input type="radio" name="q5"> Long conversations</label>
+    <label><input type="radio" name="q5"> Koi special moment</label>
   </div>
 
   <div class="quiz-question">
-    <p>6. Tumhe kya lagta hai ek strong bond ko kya special banata hai?</p>
+    <p>6. Strong bond ko kya special banata hai?</p>
     <label><input type="radio" name="q6"> Understanding</label>
     <label><input type="radio" name="q6"> Loyalty</label>
     <label><input type="radio" name="q6"> Har haal mein saath</label>
   </div>
 
   <div class="quiz-question">
-    <p>7. Kya ek khoobsurat dosti waqt ke saath aur bhi special ban sakti hai?</p>
+    <p>7. Kya ek khoobsurat dosti waqt ke saath aur special ban sakti hai?</p>
     <label><input type="radio" name="q7"> Shayad... ❤️</label>
     <label><input type="radio" name="q7"> Bilkul, agar connection real ho</label>
     <label><input type="radio" name="q7"> Kuch kahaniyan waqt likhta hai</label>
@@ -277,40 +399,42 @@ button:active{transform:scale(.97)}
 
   <button onclick="showQuizResult()">Submit My Answers 💌</button>
   <p id="quizResult"></p>
-  <button onclick="next()">Next Surprise 🎈</button>
+  <button onclick="next()">Continue 💗</button>
 </section>
 
-<!-- BALLOONS -->
+<!-- 16 BALLOONS -->
 <section class="slide">
   <h1>🎈 Pop The Balloons!</h1>
   <p>Har balloon ke andar tumhare liye ek special wish hai.</p>
+
   <div>
-    <span class="balloon" onclick="balloonWish(0)">🎈</span>
-    <span class="balloon" onclick="balloonWish(1)">🎈</span>
-    <span class="balloon" onclick="balloonWish(2)">🎈</span>
-    <span class="balloon" onclick="balloonWish(3)">🎈</span>
-    <span class="balloon" onclick="balloonWish(4)">🎈</span>
+    <span class="balloon" onclick="balloonWish(0,this)">🎈</span>
+    <span class="balloon" onclick="balloonWish(1,this)">🎈</span>
+    <span class="balloon" onclick="balloonWish(2,this)">🎈</span>
+    <span class="balloon" onclick="balloonWish(3,this)">🎈</span>
+    <span class="balloon" onclick="balloonWish(4,this)">🎈</span>
   </div>
+
   <h2 id="balloonWish">Kisi balloon par tap karo! 💗</h2>
   <button onclick="next()">Read My Letter 💌</button>
 </section>
 
-<!-- LETTER -->
+<!-- 17 LETTER -->
 <section class="slide">
   <h1>💌 Ek Baat Jo Kehni Thi...</h1>
   <div class="letter">
     <h2>Dear Anshika, 🌙</h2>
     <p>Ek ajeeb si baat hai... kuch logon se baat karte-karte pata hi nahi chalta ki woh hamari daily life ka kitna beautiful part ban gaye hain.</p>
-    <p>Kabhi unse chhoti si nok-jhok, kabhi bina wajah hasi, kabhi ek message ka wait... aur kabhi bas itna jaan lena ki woh theek hain.</p>
+    <p>Kabhi chhoti si nok-jhok, kabhi bina wajah hasi, kabhi ek message ka wait... aur kabhi bas itna jaan lena ki woh theek hain.</p>
     <p>Lekin kabhi-kabhi ek thought aata hai... kya pata jis insaan ke saath aaj itni saari memories ban rahi hain, kal uske saath zindagi ki sabse khoobsurat memories banane ka mauka bhi mil jaaye?</p>
     <p>Shayad kuch connections ko naam dene ki jaldi nahi karni chahiye. Unhe waqt ke saath khud apni kahani likhne deni chahiye.</p>
-    <p>Aur haan... ek chhota sa sawaal tumhare liye: agar kabhi tumhari favourite friendship tumhari favourite forever story ban jaaye, toh kya woh itna unexpected hoga? 🥹</p>
+    <p>Agar tumhari favourite friendship tumhari favourite forever story ban jaaye, toh kya woh itna unexpected hoga? 🥹</p>
     <p><b>Ek secret thought ke saath,</b><br>KBB ❤️</p>
   </div>
-  <button class="main-btn" onclick="next()">Abhi Ek Surprise Aur Hai 🌹</button>
+  <button onclick="next()">Next Surprise 🌹</button>
 </section>
 
-<!-- SECOND LAST SLIDE -->
+<!-- 18 SECOND LAST -->
 <section class="slide">
   <h1>🌙 Ek Khayal...</h1>
   <p>Kabhi socha hai, kuch log sirf hamare aaj ka hissa banne nahi aate...</p>
@@ -322,36 +446,301 @@ button:active{transform:scale(.97)}
   <button onclick="next()">Last Surprise ❤️</button>
 </section>
 
-<!-- FINAL SLIDE -->
+<!-- 19 FINAL -->
 <section class="slide">
   <h1>🎂 Happy Birthday, Anshika! 🎂</h1>
   <h2>तुम हमेशा खुश रहो ❤️</h2>
   <p>Tumhari life ka har naya din pichhle din se zyada beautiful ho.</p>
-  <p>Har sapna poora ho, har raasta roshan ho aur tumhe hamesha woh pyaar mile jo tum deserve karti ho. 💜</p>
+  <p>Har sapna poora ho aur tumhe hamesha woh pyaar mile jo tum deserve karti ho. 💜</p>
   <h1>With Love, KBB 💖</h1>
   <h2>Are You Ready for the Final Surprise? 🥹</h2>
-  <button class="main-btn" onclick="celebrate()">🎆 Tap to Celebrate 🎆</button>
+  <button onclick="celebrate()">🎆 Tap to Celebrate 🎆</button>
   <p id="celebrationMessage">आज का दिन सिर्फ तुम्हारे नाम! 💗</p>
-  <button class="main-btn" onclick="restart()">Replay Surprise 🔁</button>
+  <button onclick="restart()">Replay Surprise 🔁</button>
 </section>
 
 <script>
 "use strict";
 
+/* ELEMENTS */
 const slides = Array.from(document.querySelectorAll(".slide"));
-let current = 0;
+const birthdayMusic = document.getElementById("birthdayMusic");
+const romanticMusic = document.getElementById("romanticMusic");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
 
-function showSlide(index) {
+let current = 0;
+let musicStarted = false;
+let currentMusic = birthdayMusic;
+let musicMuted = false;
+
+/* SLIDE NAVIGATION */
+function showSlide(index){
   slides[current].classList.remove("active");
-  current = (index + slides.length) % slides.length;
+  current = Math.max(0,Math.min(index,slides.length-1));
   slides[current].classList.add("active");
+  window.scrollTo(0,0);
   heartBurst();
 }
 
 function next(){
-  showSlide(current + 1);
+  if(current < slides.length-1){
+    showSlide(current+1);
+  }
 }
 
+/* PASSWORD */
+function unlock(){
+  const pass = document.getElementById("password").value.trim();
+
+  if(pass !== "KBBKB2"){
+    document.getElementById("error").textContent =
+      "गलत पासवर्ड! फिर से कोशिश करो ❤️";
+    return;
+  }
+
+  document.getElementById("error").textContent = "";
+
+  /* Play is called directly inside the user click */
+  musicStarted = true;
+  musicMuted = false;
+  currentMusic = birthdayMusic;
+  birthdayMusic.currentTime = 0;
+
+  const playPromise = birthdayMusic.play();
+
+  updateMusic();
+
+  if(playPromise && typeof playPromise.catch === "function"){
+    playPromise.catch(showAudioError);
+  }
+
+  next();
+}
+
+/* MUSIC */
+function updateMusic(){
+  const playing = !birthdayMusic.paused || !romanticMusic.paused;
+
+  musicButton.textContent = playing ? "🔇 Music OFF" : "🎵 Music ON";
+
+  if(playing){
+    musicStatus.textContent =
+      currentMusic === birthdayMusic
+      ? "🎂 Birthday Song Playing"
+      : "❤️ Romantic Song Playing";
+  }else{
+    musicStatus.textContent =
+      musicMuted ? "Music Paused" : "Music OFF";
+  }
+}
+
+function showAudioError(error){
+  console.error("Audio playback error:",error);
+  musicStatus.textContent =
+    "Song load nahi hua. Music ON dabayein ya MP3 check karein.";
+  updateMusic();
+}
+
+function playCurrentMusic(){
+  const promise = currentMusic.play();
+
+  if(promise && typeof promise.catch === "function"){
+    promise.catch(showAudioError);
+  }
+
+  updateMusic();
+}
+
+musicButton.addEventListener("click",function(){
+  if(!birthdayMusic.paused || !romanticMusic.paused){
+    birthdayMusic.pause();
+    romanticMusic.pause();
+    musicMuted = true;
+    updateMusic();
+  }else{
+    if(!musicStarted){
+      currentMusic = birthdayMusic;
+      musicStarted = true;
+    }
+    musicMuted = false;
+    playCurrentMusic();
+  }
+});
+
+/* FIRST SONG ENDS, SECOND SONG STARTS */
+birthdayMusic.addEventListener("ended",function(){
+  currentMusic = romanticMusic;
+  romanticMusic.currentTime = 0;
+  musicMuted = false;
+  playCurrentMusic();
+});
+
+birthdayMusic.addEventListener("error",function(){
+  musicStatus.textContent =
+    "bdaysong.mp3 load nahi hui. Filename check karein.";
+});
+
+romanticMusic.addEventListener("error",function(){
+  musicStatus.textContent =
+    "romantic.mp3 load nahi hui. Filename check karein.";
+});
+
+birthdayMusic.addEventListener("playing",updateMusic);
+romanticMusic.addEventListener("playing",updateMusic);
+birthdayMusic.addEventListener("pause",updateMusic);
+romanticMusic.addEventListener("pause",updateMusic);
+
+/* HEARTS */
+function makeHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+
+  const emojis = ["❤️","💗","💕","💖","💜","🌸","✨"];
+  heart.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+
+  heart.style.left = Math.random()*100+"vw";
+  heart.style.fontSize = (16+Math.random()*20)+"px";
+  heart.style.animationDuration = (4+Math.random()*4)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),8500);
+}
+
+setInterval(makeHeart,500);
+
+function heartBurst(){
+  for(let i=0;i<12;i++){
+    setTimeout(makeHeart,i*60);
+  }
+}
+
+/* QUIZ */
+function showQuizResult(){
+  let answered = 0;
+
+  for(let i=1;i<=7;i++){
+    if(document.querySelector('input[name="q'+i+'"]:checked')){
+      answered++;
+    }
+  }
+
+  const result = document.getElementById("quizResult");
+
+  if(answered !== 7){
+    result.textContent = "सारे questions के answers दो ना! 🥹";
+  }else{
+    result.textContent =
+      "Awww! तुम्हारे answers भी तुम्हारी तरह special हैं! ❤️";
+    heartBurst();
+  }
+}
+
+/* BALLOONS */
+const wishes = [
+  "तुम्हारी smile हमेशा ऐसी ही बनी रहे! ❤️",
+  "तुम्हारे सारे dreams पूरे हों! 🌸",
+  "ज़िंदगी में हमेशा खुशियाँ मिलें! 💜",
+  "तुम्हें हर मोड़ पर सच्चे लोग मिलें! 🥹",
+  "तुम्हारा हर birthday special हो! 🎂"
+];
+
+function balloonWish(index,element){
+  document.getElementById("balloonWish").textContent = wishes[index];
+
+  if(element){
+    element.textContent = "💥";
+    element.style.pointerEvents = "none";
+  }
+
+  heartBurst();
+}
+
+/* SIDE STICKERS */
+function launchSideStickers(){
+  const stickers = [
+    "🎉","🎊","🌈","💖","💝","🌸",
+    "🦋","⭐","🎈","🥳","✨","💜","🎀","🌟"
+  ];
+
+  for(let i=0;i<48;i++){
+    setTimeout(function(){
+      const sticker = document.createElement("div");
+      const fromLeft = i%2===0;
+
+      sticker.className =
+        "side-sticker "+(fromLeft?"left":"right");
+
+      sticker.textContent =
+        stickers[Math.floor(Math.random()*stickers.length)];
+
+      sticker.style.setProperty("--top",(5+Math.random()*85)+"vh");
+      sticker.style.setProperty(
+        "--move",
+        fromLeft ? "calc(100vw + 150px)" : "calc(-100vw - 150px)"
+      );
+
+      document.body.appendChild(sticker);
+      setTimeout(()=>sticker.remove(),2700);
+    },i*90);
+  }
+}
+
+/* FIREWORKS */
+function launchFireworks(){
+  const colors = [
+    "#ff72b6","#a978ff","#ffe0a3",
+    "#ffffff","#ff4d8d","#65e6ff","#8cffb5"
+  ];
+
+  for(let burst=0;burst<12;burst++){
+    setTimeout(function(){
+      const cx = 8+Math.random()*84;
+      const cy = 10+Math.random()*75;
+
+      for(let i=0;i<35;i++){
+        const particle = document.createElement("div");
+        particle.className = "firework";
+
+        const angle = Math.random()*Math.PI*2;
+        const distance = 60+Math.random()*150;
+
+        particle.style.left = cx+"vw";
+        particle.style.top = cy+"vh";
+        particle.style.color =
+          colors[Math.floor(Math.random()*colors.length)];
+
+        particle.style.setProperty("--x",Math.cos(angle)*distance+"px");
+        particle.style.setProperty("--y",Math.sin(angle)*distance+"px");
+
+        document.body.appendChild(particle);
+        setTimeout(()=>particle.remove(),1600);
+      }
+
+      const flash = document.createElement("div");
+      flash.className = "flash";
+      document.body.appendChild(flash);
+      setTimeout(()=>flash.remove(),450);
+
+    },burst*300);
+  }
+}
+
+/* FINAL CELEBRATION */
+function celebrate(){
+  document.getElementById("celebrationMessage").textContent =
+    "SURPRISE! 🎉 आज सारी खुशियाँ सिर्फ तुम्हारे नाम! ❤️";
+
+  launchFireworks();
+  launchSideStickers();
+
+  for(let i=0;i<60;i++){
+    setTimeout(makeHeart,i*55);
+  }
+}
+
+/* RESTART */
 function restart(){
   birthdayMusic.pause();
   romanticMusic.pause();
@@ -359,399 +748,34 @@ function restart(){
   birthdayMusic.currentTime = 0;
   romanticMusic.currentTime = 0;
 
+  current = 0;
   musicStarted = false;
-  musicMutedByUser = false;
+  musicMuted = false;
   currentMusic = birthdayMusic;
 
-  updateMusicUI();
-  showSlide(0);
+  updateMusic();
+  slides.forEach(slide=>slide.classList.remove("active"));
+  slides[0].classList.add("active");
 
   document.getElementById("password").value = "";
   document.getElementById("error").textContent = "";
+  document.getElementById("quizResult").textContent = "";
+  document.getElementById("celebrationMessage").textContent =
+    "आज का दिन सिर्फ तुम्हारे नाम! 💗";
+
+  window.scrollTo(0,0);
 }
 
-function unlock(){
-  const password = document.getElementById("password").value.trim();
+/* PASSWORD BUTTON */
+document.getElementById("unlockButton").addEventListener("click",unlock);
 
-  if(password === "KBBKB2"){
-    startMusic();
-    next();
-  }else{
-    document.getElementById("error").textContent =
-      "गलत पासवर्ड! एक बार फिर कोशिश करो ❤️";
-  }
-}
-
-/* MUSIC SYSTEM */
-const birthdayMusic = document.getElementById("birthdayMusic");
-const romanticMusic = document.getElementById("romanticMusic");
-const musicButton = document.getElementById("musicButton");
-const musicStatus = document.getElementById("musicStatus");
-
-let currentMusic = birthdayMusic;
-let musicStarted = false;
-let musicMutedByUser = false;
-
-// GitHub Pages compatible audio paths
-birthdayMusic.src = new URL("./bdaysong.mp3", document.baseURI).href;
-romanticMusic.src = new URL("./romantic.mp3", document.baseURI).href;
-
-birthdayMusic.load();
-romanticMusic.load();
-
-function updateMusicUI(){
-  const playing =
-    !birthdayMusic.paused || !romanticMusic.paused;
-
-  musicButton.textContent =
-    playing ? "🔇 Music OFF" : "🎵 Music ON";
-
-  if(playing){
-    musicStatus.textContent =
-      currentMusic === birthdayMusic
-      ? "🎂 Birthday Song Playing"
-      : "❤️ Romantic Song Playing";
-  }else if(musicMutedByUser){
-    musicStatus.textContent =
-      "Music paused — Music ON dabayein";
-  }else{
-    musicStatus.textContent =
-      "🎵 Music ON dabakar gaana chalayein";
-  }
-}
-
-async function playTrack(track){
-  currentMusic = track;
-
-  const other =
-    track === birthdayMusic
-    ? romanticMusic
-    : birthdayMusic;
-
-  other.pause();
-
-  try{
-    track.volume = 1;
-
-    await track.play();
-
-    musicStarted = true;
-    musicMutedByUser = false;
-
-    updateMusicUI();
-
-    return true;
-
-  }catch(error){
-
-    updateMusicUI();
-
-    musicStatus.textContent =
-      "Audio blocked? Music ON button dobara dabayein";
-
-    console.error(
-      "Audio playback error:",
-      error,
-      "URL:",
-      track.currentSrc || track.src
-    );
-
-    return false;
-  }
-}
-
-function startMusic(){
-  musicStarted = true;
-  currentMusic = birthdayMusic;
-  birthdayMusic.currentTime = 0;
-
-  playTrack(birthdayMusic);
-}
-
-/* Birthday song ends -> Romantic song starts */
-birthdayMusic.addEventListener("ended",()=>{
-  currentMusic = romanticMusic;
-  romanticMusic.currentTime = 0;
-
-  playTrack(romanticMusic);
-});
-
-/* AUDIO ERROR HANDLING */
-birthdayMusic.addEventListener("error",()=>{
-  musicStatus.textContent =
-    "Birthday MP3 load nahi hui — bdaysong.mp3 check karein";
-
-  console.error(
-    "Birthday MP3 error:",
-    birthdayMusic.error,
-    birthdayMusic.currentSrc
-  );
-});
-
-romanticMusic.addEventListener("error",()=>{
-  musicStatus.textContent =
-    "Romantic MP3 load nahi hui — romantic.mp3 check karein";
-
-  console.error(
-    "Romantic MP3 error:",
-    romanticMusic.error,
-    romanticMusic.currentSrc
-  );
-});
-
-birthdayMusic.addEventListener("playing",updateMusicUI);
-romanticMusic.addEventListener("playing",updateMusicUI);
-
-birthdayMusic.addEventListener("pause",updateMusicUI);
-romanticMusic.addEventListener("pause",updateMusicUI);
-
-/* MUSIC ON/OFF BUTTON */
-musicButton.addEventListener("click",()=>{
-
-  const playing =
-    !birthdayMusic.paused || !romanticMusic.paused;
-
-  if(playing){
-
-    birthdayMusic.pause();
-    romanticMusic.pause();
-
-    musicMutedByUser = true;
-
-    updateMusicUI();
-
-  }else if(!musicStarted){
-
-    startMusic();
-
-  }else{
-
-    playTrack(currentMusic);
-
+document.getElementById("password").addEventListener("keydown",function(event){
+  if(event.key === "Enter"){
+    unlock();
   }
 });
 
-updateMusicUI();
-
-/* HEART SHOWER */
-function makeHeart(){
-
-  const heart = document.createElement("div");
-
-  heart.className = "heart";
-
-  heart.textContent = [
-    "❤️","💗","💕","💖","💜","🌸","✨"
-  ][Math.floor(Math.random()*7)];
-
-  heart.style.left = Math.random()*100 + "vw";
-
-  heart.style.fontSize =
-    (15 + Math.random()*20) + "px";
-
-  heart.style.animationDuration =
-    (4 + Math.random()*5) + "s";
-
-  document.body.appendChild(heart);
-
-  setTimeout(()=>heart.remove(),9000);
-}
-
-setInterval(makeHeart,450);
-
-function heartBurst(){
-
-  for(let i=0;i<15;i++){
-    setTimeout(makeHeart,i*60);
-  }
-
-}
-
-/* QUIZ */
-function showQuizResult(){
-
-  let answered = 0;
-
-  for(let i=1;i<=7;i++){
-
-    if(document.querySelector(
-      'input[name="q'+i+'"]:checked'
-    )){
-      answered++;
-    }
-
-  }
-
-  const result =
-    document.getElementById("quizResult");
-
-  if(answered < 7){
-
-    result.textContent =
-      "सारे questions के answers दे दो ना! 🥹";
-
-  }else{
-
-    result.textContent =
-      "Awww! तुम्हारे answers भी तुम्हारी तरह special हैं। ❤️";
-
-    heartBurst();
-
-  }
-}
-
-/* BALLOON WISHES */
-const wishes = [
-
-  "तुम्हारी smile हमेशा ऐसी ही बनी रहे! ❤️",
-
-  "तुम्हारे सारे dreams पूरे हों! 🌸",
-
-  "ज़िंदगी में हमेशा खुशियाँ मिलें! 💜",
-
-  "तुम्हें हर मोड़ पर सच्चे लोग मिलें! 🥹",
-
-  "तुम्हारा हर birthday पहले से ज़्यादा special हो! 🎂"
-
-];
-
-function balloonWish(index){
-
-  document.getElementById("balloonWish").textContent =
-    wishes[index];
-
-  heartBurst();
-
-}
-
-/* COLOURFUL STICKERS FROM BOTH SIDES */
-function launchSideStickers(){
-
-  const stickers = [
-    "🎉","🎊","🌈","💖","💝","🌸",
-    "🦋","⭐","🎈","🥳","✨","💜"
-  ];
-
-  for(let i=0;i<36;i++){
-
-    setTimeout(()=>{
-
-      const sticker =
-        document.createElement("div");
-
-      sticker.className =
-        "side-sticker " +
-        (i%2===0 ? "left" : "right");
-
-      sticker.textContent =
-        stickers[Math.floor(Math.random()*stickers.length)];
-
-      sticker.style.setProperty(
-        "--top",
-        (8+Math.random()*78)+"vh"
-      );
-
-      sticker.style.animationDuration =
-        (1.8+Math.random()*1.2)+"s";
-
-      document.body.appendChild(sticker);
-
-      setTimeout(()=>sticker.remove(),3300);
-
-    },i*85);
-
-  }
-}
-
-/* FIREWORKS CELEBRATION */
-function celebrate(){
-
-  const message =
-    document.getElementById("celebrationMessage");
-
-  message.textContent =
-    "SURPRISE! 🎉 आज सारी खुशियाँ सिर्फ तुम्हारे नाम! ❤️";
-
-  const colors = [
-    "#ff72b6",
-    "#a978ff",
-    "#ffe0a3",
-    "#ffffff",
-    "#ff4d8d",
-    "#65e6ff",
-    "#8cffb5"
-  ];
-
-  for(let burst=0;burst<12;burst++){
-
-    setTimeout(()=>{
-
-      const centerX = 8 + Math.random()*84;
-      const centerY = 12 + Math.random()*68;
-
-      for(let i=0;i<42;i++){
-
-        const particle =
-          document.createElement("div");
-
-        particle.className = "firework";
-
-        const angle =
-          Math.random()*Math.PI*2;
-
-        const distance =
-          65 + Math.random()*165;
-
-        particle.style.left =
-          centerX+"vw";
-
-        particle.style.top =
-          centerY+"vh";
-
-        particle.style.color =
-          colors[Math.floor(Math.random()*colors.length)];
-
-        particle.style.setProperty(
-          "--fx",
-          Math.cos(angle)*distance+"px"
-        );
-
-        particle.style.setProperty(
-          "--fy",
-          Math.sin(angle)*distance+"px"
-        );
-
-        document.body.appendChild(particle);
-
-        setTimeout(()=>particle.remove(),1600);
-
-      }
-
-      const flash =
-        document.createElement("div");
-
-      flash.className =
-        "celebration-flash";
-
-      document.body.appendChild(flash);
-
-      setTimeout(()=>flash.remove(),400);
-
-    },burst*300);
-
-  }
-
-  /* LEFT + RIGHT FLYING STICKERS */
-  launchSideStickers();
-
-  /* EXTRA HEARTS */
-  for(let i=0;i<55;i++){
-    setTimeout(makeHeart,i*55);
-  }
-
-  heartBurst();
-
-}
+updateMusic();
 </script>
 
 </body>
